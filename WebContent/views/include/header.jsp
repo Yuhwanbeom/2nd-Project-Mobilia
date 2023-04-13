@@ -16,7 +16,7 @@
 		<header class="header"> 
 	<%-------------------------------------- 로그인쪽 메뉴 ------------------------------------%>
 			<div id="login"> 
-				<a href="#">Login</a> <a href="join.net">Join</a> <a href="#">Cart</a> <a
+				<a href="login.net">Login</a> <a href="join.net">Join</a> <a href="#">Cart</a> <a
 					href="myshop.net">Myshop</a> <a href="#">Community</a>
 			</div>
 			<%-------------------------------------- 로고 ------------------------------------%>
