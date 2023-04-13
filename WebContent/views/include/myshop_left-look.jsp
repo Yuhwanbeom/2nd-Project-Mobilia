@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <jsp:include page="../include/header.jsp" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" type="text/css" href="./css/member/myshop.css">
+<link rel="stylesheet" type="text/css" href="./css/member/modify.css">
  <div class="Myshop">
  <%------------ 화면좌측 카테고리 영역시작 ------------%>
   <div id="myshop_left-look">
