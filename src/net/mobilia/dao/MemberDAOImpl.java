@@ -128,4 +128,44 @@ public class MemberDAOImpl {
 		return m;
 	}
 
+
+	public MemberVO getMember(String id) {
+		
+		MemberVO mvo=null;
+		
+		try {
+			con=ds.getConnection();
+			sql="select * from m_member where m_id=?";
+			pt=con.prepareStatement(sql);
+			pt.setString(1,id);
+			rs=pt.executeQuery();
+			if(rs.next()){
+				mvo=new MemberVO();
+				mvo.setM_id(rs.getString("m_id"));
+				mvo.setM_pwd(rs.getString("m_pwd"));
+				mvo.setM_name(rs.getString("m_name"));
+				mvo.setM_post(rs.getString("m_post"));
+				mvo.setM_roadAddr(rs.getString("m_roadAddr"));
+				mvo.setM_jibunAddr(rs.getString("m_jibunAddr"));
+				mvo.setM_detailAddr(rs.getString("m_detailAddr"));
+				mvo.setM_phone01(rs.getString("m_phone01"));
+				mvo.setM_phone02(rs.getString("m_phone02"));
+				mvo.setM_phone03(rs.getString("m_phone03"));
+				mvo.setMail_id(rs.getString("mail_id"));
+				mvo.setMail_domain(rs.getString("mail_domain"));
+				mvo.setM_birth01(rs.getString("m_birth01"));
+				mvo.setM_birth02(rs.getString("m_birth02"));
+				mvo.setM_birth03(rs.getString("m_birth03"));
+			}
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try{
+				if(rs != null) rs.close();
+				if(pt != null) pt.close();
+				if(con != null) con.close();
+			}catch(Exception e) {e.printStackTrace();}
+		}//finally
+		return mvo;
+	}
+
 }

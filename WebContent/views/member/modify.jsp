@@ -25,7 +25,7 @@
     <tr>
      <th scope="row" class="edit-th">아이디</th>
      <td>
-      <input id="m_id" name="m_id" onclick="show_edit-id-text();" readonly>
+      <input id="m_id" name="m_id" value="${mvo.m_id}" onclick="show_edit-id-text();" readonly>
 	  <span id="edit-id-text">아이디는 수정이 불가능합니다.</span>
      </td>
     </tr>
@@ -33,7 +33,7 @@
     <tr>
      <th class="edit-th">비밀번호<b class="star">*</b></th>
      <td>
-      <input id="m_pwd" name="m_pwd" onchange="check_pwd()">
+      <input id="m_pwd" name="m_pwd" value="${mvo.m_pwd}" onchange="check_pwd()">
       <span class="pwdMsg">(영문 대소문자/숫자/특수문자 조합가능, 6~16자)</span>
      </td>
     </tr>
@@ -48,40 +48,40 @@
     
     <tr>
      <th class="edit-th">이름<b class="star">*</b></th>
-     <td><input id="m_name" name="m_name"></td>
+     <td><input id="m_name" name="m_name" value="${mvo.m_name}"></td>
     </tr>
     
     <tr>
      <th id="post-th">주소<b class="star">*</b></th>
      <td>
-     <input type="text" id="m_post" placeholder="우편번호" style="width:80px;" readonly>
+     <input type="text" id="m_post" placeholder="우편번호" value="${mvo.m_post}" style="width:80px;" readonly>
 	<input type="button" onclick="post_check()" value="우편번호 찾기"><br><br>
-	<input type="text" id="m_roadAddr" placeholder="도로명주소" style="width:260px;" readonly>
-	<input type="text" id="m_jibunAddr" placeholder="지번주소" style="width:260px;" readonly>
+	<input type="text" id="m_roadAddr" placeholder="도로명주소" value="${mvo.m_roadAddr}" style="width:260px;" readonly>
+	<input type="text" id="m_jibunAddr" placeholder="지번주소" value="${mvo.m_jibunAddr}" style="width:260px;" readonly>
 	<span id="guide" style="color:#999;display:none"></span>
-	<input type="text" id="m_detailAddr" placeholder="상세주소" style="width:200px;">
+	<input type="text" id="m_detailAddr" placeholder="상세주소" value="${mvo.m_detailAddr}" style="width:200px;">
      </td>
     </tr>
     
     <tr>
      <th class="edit-th">휴대전화<b class="star">*</b></th>
      <td>
-      <select id="m_phone1" name="m_phone1" style="width:80px; height:30px; margin-left:12px; margin-right:12px;">
+      <select id="m_phone1" name="m_phone1" value="${mvo.m_phone01}" style="width:80px; height:30px; margin-left:12px; margin-right:12px;">
        <c:forEach var="p" items="${phone}">
         <option value="${p}">${p}</option>
        </c:forEach>
       </select>
       -
-      <input id="m_phone02" name="m_phone02" size="4" maxlength="4">-
-      <input id="m_phone03" name="m_phone03" size="4" maxlength="4">
+      <input id="m_phone02" name="m_phone02" value="${mvo.m_phone02}" size="4" maxlength="4">-
+      <input id="m_phone03" name="m_phone03" value="${mvo.m_phone03}" size="4" maxlength="4">
      </td>
     </tr>
     
     <tr>
      <th class="edit-th">이메일<b class="star">*</b></th>
      <td>
-      <input id="mail_id" name="mail_id">
-      &nbsp;@&nbsp;<input id="mail_domain" name="mail_domain" readonly>&nbsp;
+      <input id="mail_id" name="mail_id" value="${mvo.mail_id}">
+      &nbsp;@&nbsp;<input id="mail_domain" name="mail_domain"  value="${mvo.mail_domain}" readonly>&nbsp;
       <select id="mail_list" onchange="domain_list();" style="width:85px; height:30px;">
        <c:forEach var="mail" items="${email}">
         <option value="${mail}">${mail}</option>
@@ -93,9 +93,9 @@
     <tr>
      <th class="edit-th">생년월일</th>
      <td>
-      <input id="m_birth01" name="m_birth01" size="4" maxlength="4">년&nbsp;
-      <input id="m_birth02" name="m_birth02" size="2" maxlength="2">월&nbsp;
-      <input id="m_birth03" name="m_birth03" size="2" maxlength="2">일
+      <input id="m_birth01" name="m_birth01" value="${mvo.m_birth01}" size="4" maxlength="4">년&nbsp;
+      <input id="m_birth02" name="m_birth02" value="${mvo.m_birth02}" size="2" maxlength="2">월&nbsp;
+      <input id="m_birth03" name="m_birth03" value="${mvo.m_birth03}" size="2" maxlength="2">일
      </td>
     </tr>
     </tbody>
