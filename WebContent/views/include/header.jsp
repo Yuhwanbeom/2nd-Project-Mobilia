@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>mobilia</title>
 <link rel="stylesheet" type="text/css" href="./css/main.css">
-<link rel="stylesheet" type="text/css" href="./css/member/myshop.css">
 <link rel="stylesheet" type="text/css" href="./css/list.css">
 <script src="./js/jquery.js"></script>
 <script src="./js/header.js"></script>
