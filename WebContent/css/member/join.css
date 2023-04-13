@@ -1,23 +1,6 @@
 @charset "UTF-8";
 
-@media (min-width: 1920px){
-	.sub_title{
-		 padding: 50px 0 10px;
-		 margin-left:510px;
-	}
-	.agree01{
-		margin-left:440px;
-	}
-	.agree02{
-		margin-left:440px;
-	}
-	.a01{
-		margin-left:440px;
-	}
-	.a02{
-		margin-left:440px;
-	}
-}
+
 /*#wrap{
 	margin-left:auto;
 	margin-right:auto;
@@ -115,6 +98,24 @@ td{
 .agree02{
 	margin-left:250px;
 }
+@media (min-width: 1920px){
+	.sub_title{
+		 padding: 50px 0 10px;
+		 margin-left:460px;
+	}
+	.agree01{
+		margin-left:440px;
+	}
+	.agree02{
+		margin-left:440px;
+	}
+	.a01{
+		margin-left:440px;
+	}
+	.a02{
+		margin-left:440px;
+	}
+}
 .OK{
 	
 	width:80px; height:30px;
@@ -127,3 +128,4 @@ td{
 	display:block;
 	cursor:pointer;
 }
+

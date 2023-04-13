@@ -32,10 +32,43 @@ public class MemberDAOImpl {
 	}//생성자
 
 
-	//회원 
+	//회원 가입
 	public int insertMember(MemberVO m) {
-
-		return 0;
+		int re=-1;
+		try {
+			con=ds.getConnection();
+			sql="insert into m_member(m_id,m_pwd,m_name,m_post,m_roadAddr,m_jibunAddr,m_detailAddr,"
+					+ "m_phone01,m_phone02,m_phone03,m_birth01,m_birth02,m_birth03,mail_id,mail_domain,m_state,m_date)"
+					+ " values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,1,sysdate)";
+			
+			pt=con.prepareStatement(sql);
+			
+			pt.setString(1, m.getM_id());
+			pt.setString(2, m.getM_pwd());
+			pt.setString(3, m.getM_name());
+			pt.setString(4, m.getM_post());
+			pt.setString(5, m.getM_roadAddr());
+			pt.setString(6, m.getM_jibunAddr());
+			pt.setString(7, m.getM_detailAddr());
+			pt.setString(8, m.getM_phone01());
+			pt.setString(9, m.getM_phone02());
+			pt.setString(10, m.getM_phone03());
+			pt.setString(11, m.getM_birth01());
+			pt.setString(12, m.getM_birth02());
+			pt.setString(13, m.getM_birth03());
+			pt.setString(14, m.getMail_id());
+			pt.setString(15, m.getMail_domain());
+			
+			re=pt.executeUpdate();
+			
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				if(pt != null) pt.close();
+				if(con != null) con.close();
+			}catch(Exception e) {e.printStackTrace();}
+		}
+		return re;
 	}
 
 

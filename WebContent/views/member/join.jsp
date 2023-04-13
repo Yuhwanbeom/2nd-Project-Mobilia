@@ -9,7 +9,6 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
  <div class="title">
   <h2>회원 가입</h2>
-  
  </div>
  <form name="m" method="post" action="join_ok.net" id="joinForm" name="joinForm"
  onsubmit="return join_check();">
@@ -33,7 +32,7 @@
     <tr>
      <th>비밀번호<b class="star">*</b></th>
      <td>
-     <input type="password" name="userPW" id="m_pwd" onchange="check_pwd()">
+     <input type="password" name="m_pwd" id="m_pwd" onchange="check_pwd()">
      <span class="pwdMsg">(영문 대소문자/숫자/특수문자 조합가능, 6~16자)</span>
      </td>
     </tr>
@@ -41,7 +40,7 @@
     <tr>
      <th>비밀번호 확인<b class="star">*</b></th>
      <td>
-     <input type="password" name="userPW2" id="pwd_chk" onchange="check_pwd()">
+     <input type="password" name="m_pwd" id="pwd_chk" onchange="check_pwd()">
      &nbsp;<span id="check"></span>
      </td>
     </tr>
@@ -55,12 +54,12 @@
     
     <tr>
      <th id="post-th">우편번호<b class="star">*</b></th>
-     <td><input type="text" id="m_post" placeholder="우편번호" readonly>
+     <td><input type="text" id="m_post" name="m_post" placeholder="우편번호" readonly>
 		<input type="button" onclick="post_check()" value="우편번호 찾기"><br><br>
-		<input type="text" id="m_roadAddr" placeholder="도로명주소" style="width:230px;" readonly>
-		<input type="text" id="m_jibunAddr" placeholder="지번주소" style="width:230px;"  readonly>
+		<input type="text" id="m_roadAddr" name="m_roadAddr" placeholder="도로명주소" style="width:230px;" readonly>
+		<input type="text" id="m_jibunAddr" name="m_jibunAddr" placeholder="지번주소" style="width:230px;"  readonly>
 		<span id="guide" style="color:#999;display:none"></span>
-		<input type="text" id="m_detailAddr" placeholder="상세주소">
+		<input type="text" id="m_detailAddr" name="m_detailAddr" placeholder="상세주소">
 
 
 
@@ -96,9 +95,9 @@
     <tr>
      <th>생년월일</th>
      <td>
-      <input name="yy" id="year" maxlength="4" size="4">년
-	  <input name="mm" id="month" maxlength="2" size="2">월
-	  <input name="dd" id="day" maxlength="2" size="2">일
+      <input name="m_birth01" id="m_birth01" maxlength="4" size="4">년
+	  <input name="m_birth02" id="m_birth02" maxlength="2" size="2">월
+	  <input name="m_birth03" id="m_birth03" maxlength="2" size="2">일
      </td>
     </tr>
    </table>
