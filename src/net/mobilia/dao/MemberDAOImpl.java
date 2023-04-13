@@ -12,26 +12,26 @@ import javax.sql.DataSource;
 import net.mobilia.vo.MemberVO;
 
 public class MemberDAOImpl {
-	
+
 	Connection con=null;//db연결 con
 	PreparedStatement pt=null;//쿼리문 수행
 	Statement st=null;//쿼리문 수행
 	ResultSet rs=null;//검색 결과 레코드를 저장할 rs
 	DataSource ds=null;//DBCP 커넥션 풀 관리 ds
 	String sql=null;//쿼리문 저장변수
-	
+
 	public MemberDAOImpl() {
-		
+
 		try {
-			
+
 			Context ctx=new InitialContext();
 			ds=(DataSource)ctx.lookup("java:comp/env/jdbc/xe");
 			//커넥션 풀 관리 ds 생성
-			
+
 		}catch(Exception e) {e.printStackTrace();}
 	}//생성자
 
-	
+
 	//회원 
 	public int insertMember(MemberVO m) {
 
@@ -43,18 +43,18 @@ public class MemberDAOImpl {
 	public MemberVO idCheck(String id) {
 
 		MemberVO m=null;
-		
-try {
+
+		try {
 			con=ds.getConnection();//커넥션 풀로 관리 ds로 db연결 con 생성
 			st=con.createStatement();
 			sql="select * from m_member where m_id='"+id+"'";
 			rs=st.executeQuery(sql);//검색 쿼리문 수행해서 결과 회원정보를 rs에 저장
-			
+
 			if(rs.next()) {
 				m=new MemberVO();
 				m.setM_id(rs.getString("m_id"));
 			}
-			
+
 		}catch(Exception e) {e.printStackTrace();}
 		finally {
 			try {
@@ -63,13 +63,13 @@ try {
 				if(con != null) con.close();
 			}catch(Exception e) {e.printStackTrace();}
 		}
-		
+
 		return null;
 	}
 
 
 	public void updateMember(MemberVO m) {
-		
+
 		try {
 			con = ds.getConnection();
 			sql = "update m_member set m_pwd=?, m_name=?, m_post=?, m_roadAddr=?, m_jibunAddr=?,"
@@ -98,7 +98,34 @@ try {
 				if(con != null) con.close();
 			}catch(Exception e) {e.printStackTrace();}
 		}
-		
+
 	}//updateMember()
+
+
+	public MemberVO loginCheck(String m_id) {
+		MemberVO m=null;
+
+		try {
+			con=ds.getConnection();
+			sql="select * from m_member where m_id=? and m_state=1";//가입회원 1인경우만
+			//로그인 인증 처리
+			pt=con.prepareStatement(sql);
+			pt.setString(1,m_id);
+			rs=pt.executeQuery();//검색 쿼리문 수행해서 결과 레코드를 rs에 저장
+			if(rs.next()) {
+				m = new MemberVO();
+				m.setM_pwd(rs.getString("m_pwd"));
+				
+			}
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				if(rs != null) rs.close();
+				if(pt != null) pt.close();
+				if(con != null) con.close();
+			}catch(Exception e) {e.printStackTrace();}
+		}
+		return m;
+	}
 
 }
