@@ -9,11 +9,7 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
  <div class="title">
 
-  <h2>회원 가입 수정</h2>
-  <h2>회원 가입해라</h2>
-  <h1>여기는 테스트</h1>
-  <h3>테스트 3</h3>
-  <h5>커밋이 되어라</h5>
+  <h2>회원 가입</h2>
 
  </div>
  <form name="m" method="post" action="join_ok.net" id="joinForm" name="joinForm"
