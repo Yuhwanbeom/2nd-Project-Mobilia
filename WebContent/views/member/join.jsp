@@ -11,6 +11,7 @@
   <h2>회원 가입해라</h2>
   <h1>여기는 테스트</h1>
   <h3>테스트 3</h3>
+  <h5>커밋이 되어라</h5>
  </div>
  <form name="m" method="post" action="join_ok.net" id="joinForm" name="joinForm"
  onsubmit="return join_check();">
