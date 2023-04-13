@@ -11,25 +11,24 @@
 	<%-------------------------타이틀,카테고리-------------------------%>
 	
 		<div id="list_title">
-			<h1 style="color:#333; font-size:32px;">Bed</h1><span>
+			<h1 style="color:#333; font-size:32px;">Sofa</h1><span>
 			< ${state.substring(0,1).toUpperCase()}${state.substring(1)} ></span>
 			<div id="list_category">
-				<a href="list_bed.net?c=bed&state=all">All</a> |
-				<a href="list_bed.net?c=bed&state=single">Single</a> |
-				<a href="list_bed.net?c=bed&state=super single">Super Single</a> |
-				<a href="list_bed.net?c=bed&state=double">Double</a> |
-				<a href="list_bed.net?c=bed&state=queen">Queen</a> |
-				<a href="list_bed.net?c=bed&state=king">King</a>
+				<a href="list_sofa.net?c=sofa&state=all">All</a> |
+				<a href="list_sofa.net?c=sofa&state=1인용 소파">1인용 소파</a> |
+				<a href="list_sofa.net?c=sofa&state=2~3인용 소파">2~3인용 소파</a> |
+				<a href="list_sofa.net?c=sofa&state=카우치형 소파">카우치형 소파</a> |
+				<a href="list_sofa.net?c=sofa&state=리클라이너 소파">리클라이너 소파</a>
 			</div>
 		</div>
 		<%-------------------------상품총개수,상품분류-------------------------%>
 		<div id="product_class">
 			<p>TOTAL <strong style="color:#333">${listCount}</strong> PRODUCTS</p>
 					<ul>
-						<li><a href="list_bed.net?c=bed&state=${state}&m=new" id="product_class_a">신상품</a></li>
-						<li><a href="list_bed.net?c=bed&state=${state}&m=low" id="product_class_a">낮은가격</a></li>
-						<li><a href="list_bed.net?c=bed&state=${state}&m=high" id="product_class_a">높은가격</a></li>
-						<li><a href="list_bed.net?c=bed&state=${state}&m=best" id="product_class_al">인기상품</a></li>
+						<li><a href="list_sofa.net?c=sofa&state=${state}&m=new" id="product_class_a">신상품</a></li>
+						<li><a href="list_sofa.net?c=sofa&state=${state}&m=low" id="product_class_a">낮은가격</a></li>
+						<li><a href="list_sofa.net?c=sofa&state=${state}&m=high" id="product_class_a">높은가격</a></li>
+						<li><a href="list_sofa.net?c=sofa&state=${state}&m=best" id="product_class_al">인기상품</a></li>
 					</ul>
 		</div>
 		

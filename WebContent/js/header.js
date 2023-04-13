@@ -8,12 +8,16 @@ $(document).ready(function() {
 	}).mouseout(function() {
 		$(this).find('.sub_menu').stop().slideUp();
 	});
+	
 	$(".all_menu").click(function(){
 		if($("#all_menu_div").css('display')=="none"){
 			$("#all_menu_div").css('display','block');
 		}else{
 			$("#all_menu_div").css('display','none');
 		}
+	});
+	$('#all_menu_close').click(function(){
+		$("#all_menu_div").css('display','none');
 	});
 	$('#up_btn').click(function(){
 		window.scrollTo({top : 0, behavior:"smooth"});
