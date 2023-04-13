@@ -33,7 +33,7 @@ public class LoginOKController implements Action {
 			if(!mvo.getM_pwd().equals(m_pwd)){
 				out.println("<script>");
 				out.println("alert('비번이 다릅니다!');");
-				//out.println("history.go(-1);");
+				out.println("history.go(-1);");
 				out.println("</script>");
 			}else {
 				HttpSession session=request.getSession();//세션 객체 생성
