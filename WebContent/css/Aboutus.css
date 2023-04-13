@@ -2,8 +2,8 @@
 
 .Aboutus{
 	/*border : 1px solid black;*/
-	margin : 0px 100px 0px 100px;
-	width : 1600px;
+	margin : 0px 150px 0px 100px;
+	width : 1700px;
 	
 }
 
@@ -290,7 +290,7 @@
 
 #factory_intro2_cont2{
 	
-	font-size : 15px;
+	font-size : 18px;
 	font-family: "돋움",Dotum;
 }
 
@@ -326,7 +326,7 @@
 
 #factory_intro3_cont2{
 	
-	font-size : 15px;
+	font-size : 18px;
 	font-family: "돋움",Dotum;
 	
 }
@@ -358,7 +358,7 @@
 }
 
 #factory_intro4_cont2{
-	font-size : 15px;
+	font-size : 18px;
 	font-family: "돋움",Dotum;
 }
 
@@ -389,7 +389,7 @@
 }
 
 #factory_intro5_cont2{
-	font-size : 15px;
+	font-size : 18px;
 	font-family: "돋움",Dotum;
 }
 
@@ -420,7 +420,7 @@
 }
 
 #factory_intro6_cont2{
-	font-size : 15px;
+	font-size : 18px;
 	font-family: "돋움",Dotum;
 }
 
