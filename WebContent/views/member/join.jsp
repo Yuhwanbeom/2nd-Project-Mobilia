@@ -8,7 +8,7 @@
 <script src="./js/join.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
  <div class="title">
-  <h2>회원 가입해라</h2>
+  <h2>회원 가입 하겠습니다</h2>
  </div>
  <form name="m" method="post" action="join_ok.net" id="joinForm" name="joinForm"
  onsubmit="return join_check();">
@@ -21,24 +21,24 @@
     <col style="width:auto;">
    </colgroup>
     <tr>
-     <th>아이디<b class="star">*</b></th>
+     <th>아이디</th>
      <td>
      <input type="text" id="m_id" name="m_id" size="16">
-     <span class="idMsg">(영문 대소문자/숫자 조합가능, 4~16자)</span>&nbsp;
+     <span class="idMsg">(영문소문자/숫자, 4~16자)</span>&nbsp;
      <input type="button" value="중복확인" onclick="id_check();"><br><span id="idcheck"></span>
      </td>
     </tr>
     
     <tr>
-     <th>비밀번호<b class="star">*</b></th>
+     <th>비밀번호</th>
      <td>
      <input type="password" name="userPW" id="m_pwd" onchange="check_pwd()">
-     <span class="pwdMsg">(영문 대소문자/숫자/특수문자 조합가능, 6~16자)</span>
+     <span class="pwdMsg">비밀번호는 6자 이상,16자 이하,특수문자(!,@,#,$,%)로 조합만 가능합니다.</span>
      </td>
     </tr>
     
     <tr>
-     <th>비밀번호 확인<b class="star">*</b></th>
+     <th>비밀번호 확인</th>
      <td>
      <input type="password" name="userPW2" id="pwd_chk" onchange="check_pwd()">
      &nbsp;<span id="check"></span>
@@ -46,20 +46,20 @@
     </tr>
     
     <tr>
-     <th>이름<b class="star">*</b></th>
+     <th>이름</th>
      <td>
      <input type="text" id="m_name" name="m_name" size="16">
      </td>
     </tr>
     
     <tr>
-     <th id="post-th">우편번호<b class="star">*</b></th>
+     <th>우편번호</th>
      <td><input type="text" id="m_post" placeholder="우편번호" readonly>
-		<input type="button" onclick="post_check()" value="우편번호 찾기"><br><br>
-		<input type="text" id="m_roadAddr" placeholder="도로명주소" style="width:230px;" readonly>
-		<input type="text" id="m_jibunAddr" placeholder="지번주소" style="width:230px;"  readonly>
-		<span id="guide" style="color:#999;display:none"></span>
-		<input type="text" id="m_detailAddr" placeholder="상세주소">
+<input type="button" onclick="post_check()" value="우편번호 찾기"><br>
+<input type="text" id="m_roadAddr" placeholder="도로명주소" redaonly>
+<input type="text" id="m_jibunAddr" placeholder="지번주소" readonly>
+<span id="guide" style="color:#999;display:none"></span>
+<input type="text" id="m_detailAddr" placeholder="상세주소">
 
 
 
@@ -68,9 +68,9 @@
     </tr>     
       
     <tr>
-     <th>휴대 전화<b class="star">*</b></th>
+     <th>휴대 전화</th>
      <td>
-     <select name="m_phone01" id="m_phone01" style="width:80px; height:30px; margin-left:12px; margin-right:12px;">
+     <select name="m_phone01" id="m_phone01">
       <c:forEach var="p" items="${phone}">
        <option value="${p}">${p}</option>
         </c:forEach>
@@ -80,10 +80,10 @@
     </tr>
     
     <tr>
-     <th>이메일<b class="star">*</b></th>
+     <th>이메일</th>
      <td>
         <input name="mail_id" id="mail_id" size="12" >@<input name="mail_domain" 
-        id="mail_domain" size="16" readonly  style="width:80px; height:20px;">&nbsp;<select name="mail_list" 
+        id="mail_domain" size="16" readonly >&nbsp;<select name="mail_list" 
         onchange="domain_list();">
            <c:forEach var="mail" items="${email}">
           <option value="${mail}">${mail}</option>
@@ -95,9 +95,9 @@
     <tr>
      <th>생년월일</th>
      <td>
-      <input name="yy" id="year" maxlength="4" size="4">년
-	  <input name="mm" id="month" maxlength="2" size="2">월
-	  <input name="dd" id="day" maxlength="2" size="2">일
+      <select name="yy" id="year"></select>년
+	  <select name="mm" id="month"></select>월
+	  <select name="dd" id="day"></select>일
      </td>
     </tr>
    </table>

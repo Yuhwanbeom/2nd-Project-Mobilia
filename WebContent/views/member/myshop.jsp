@@ -7,9 +7,9 @@
    <div class="myshop_category-box">
     <h4>주문조회</h4>
     <ul>
-     <li><a href="orderlist.net">주문조회/배송조회</a></li>
-     <li><a href="orderlist.net">취소/반품/교환내역</a></li>
-     <li><a href="orderlist.net">과거주문내역</a></li>
+     <li><a href="#">주문조회/배송조회</a></li>
+     <li><a href="#">취소/반품/교환내역</a></li>
+     <li><a href="#">과거주문내역</a></li>
     </ul>
    </div>
    <div class="myshop_category-box">
@@ -64,11 +64,11 @@
    <div id="top-div">
     <div>
      <img src="./images/myshop/order.png" alt="주문내역 조회"/><br>
-     <a href="orderlist.net" class=top-a>
+     <a href="#" class=top-a>
       <b>Order</b><br>
       <label>주문내역 조회</label><br><br>
      </a>
-     <a href="orderlist.net" class="bottom-a">
+     <a href="#" class="bottom-a">
       <label>고객님께서 주문하신 상품의</label><br>
  	  <label>주문내역을 확인하실 수 있습니다.</label>
      </a>

@@ -21,7 +21,9 @@ create table m_member(
  ,m_deldate date --탈퇴 날짜
 );
 
---drop table m_member;
+
+
+drop table m_member;
 
 insert into m_member(m_id,m_pwd,m_name,m_post,m_roadAddr,m_jibunAddr,m_detailAddr,m_phone01,m_phone02,m_phone03,m_birth01,m_birth02,m_birth03,mail_id,mail_domain,m_date)
 values('bbbbb','qwe123!','홍','07941','서울 양천구 국회대로 132','서울 양천구 신정동 938-1','101','010','1111','1111','1997','09','30','sungk97','naver.com',sysdate);

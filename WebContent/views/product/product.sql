@@ -23,3 +23,8 @@ increment by 1 --1씩 증가
 nocache; --임시 메모리 사용하지 않겠다는 뜻
 
 drop sequence product_no_seq;
+
+delete PRODUCT_LIST;
+commit;
+
+select p_img1,p_img2,p_name,p_before_price,p_price,p_sold from product_list where p_class='bed' order by p_sold asc;

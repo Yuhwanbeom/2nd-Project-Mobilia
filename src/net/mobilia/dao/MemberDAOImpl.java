@@ -45,6 +45,7 @@ public class MemberDAOImpl {
 		MemberVO m=null;
 		
 try {
+			
 			con=ds.getConnection();//커넥션 풀로 관리 ds로 db연결 con 생성
 			st=con.createStatement();
 			sql="select * from m_member where m_id='"+id+"'";
@@ -66,39 +67,5 @@ try {
 		
 		return null;
 	}
-
-
-	public void updateMember(MemberVO m) {
-		
-		try {
-			con = ds.getConnection();
-			sql = "update m_member set m_pwd=?, m_name=?, m_post=?, m_roadAddr=?, m_jibunAddr=?,"
-					+ "m_detailAddr=?, m_phone01=?, m_phone2=?, m_phone3=?, mail_id=?, mail_domain=?,"
-					+ "m_birth01=?, m_birth02=?, m_birth03=?";
-			pt = con.prepareStatement(sql);
-			pt.setString(1, m.getM_pwd());
-			pt.setString(2, m.getM_name());
-			pt.setString(3, m.getM_post());
-			pt.setString(4, m.getM_roadAddr());
-			pt.setString(5, m.getM_jibunAddr());
-			pt.setString(6, m.getM_detailAddr());
-			pt.setString(7, m.getM_phone01());
-			pt.setString(8, m.getM_phone02());
-			pt.setString(9, m.getM_phone03());
-			pt.setString(10, m.getMail_id());
-			pt.setString(11, m.getMail_domain());
-			pt.setString(12, m.getM_birth01());
-			pt.setString(13, m.getM_birth01());
-			pt.setString(14, m.getM_birth01());
-
-		}catch(Exception e) {e.printStackTrace();}
-		finally {
-			try {
-				if(pt != null) pt.close();
-				if(con != null) con.close();
-			}catch(Exception e) {e.printStackTrace();}
-		}
-		
-	}//updateMember()
 
 }

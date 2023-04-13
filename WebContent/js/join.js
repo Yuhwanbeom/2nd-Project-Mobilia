@@ -8,16 +8,8 @@ function join_check(){
 		$("#m_id").val("").focus();
 		return false;
 	}
-	if($.trim($("#m_pwd").val())==""){
-		alert("회원비밀번호를 입력하세요!");
-		$("#m_pwd").val("").focus();
-		return false;
-	}
-	if($.trim($("#pwd_chk").val())==""){
-		alert("비밀번호 확인을 해주세요!");
-		$("#pwd_chk").val("").focus();
-		return false;
-	}
+	
+	
 	if($.trim($("#m_name").val())==""){
 		alert("회원이름을 입력하세요!");
 		$("#m_name").val("").focus();
@@ -67,55 +59,6 @@ function join_check(){
         }
 
 }//join_check()
-
-function edit_check(){
-	
-	if($.trim($("#m_pwd").val())==""){
-		alert("회원비밀번호를 입력하세요!");
-		$("#m_pwd").val("").focus();
-		return false;
-	}
-	if($.trim($("#pwd_chk").val())==""){
-		alert("비밀번호 확인을 해주세요!");
-		$("#pwd_chk").val("").focus();
-		return false;
-	}
-	if($.trim($("#m_name").val())==""){
-		alert("회원이름을 입력하세요!");
-		$("#m_name").val("").focus();
-		return false;
-	}
-	
-	if($.trim($("#m_post").val())==""){
-		alert("우편번호를 입력하세요!");		
-		return false;
-	}
-	
-	if($.trim($("#m_detailAddr").val())==""){
-		alert("상세주소를 입력하세요!");		
-		return false;
-	}
-	
-	if($.trim($("#m_phone02").val())==""){
-		alert("폰번호를 입력하세요!");
-		$("#m_phone02").val("").focus();
-		return false;
-	}
-	if($.trim($("#m_phone03").val())==""){
-		alert("폰번호를 입력하세요!");
-		$("#m_phone03").val("").focus();
-		return false;
-	}
-	if($.trim($("#mail_id").val())==""){
-		alert("이메일을 입력하세요!");
-		$("#mail_id").val("").focus();
-		return false;
-	}
-	if($.trim($("#mail_domain").val())==""){
-		alert("이메일을 입력하세요!");		
-		return false;
-	}
-}
 
 //비밀번호 유효성 및 조건
  function check_pwd(){

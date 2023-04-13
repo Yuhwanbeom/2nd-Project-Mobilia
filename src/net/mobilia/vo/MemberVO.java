@@ -12,16 +12,15 @@ public class MemberVO {
 	private String m_phone01;
 	private String m_phone02;
 	private String m_phone03;
-	private String mail_id;
-	private String mail_domain;
 	private String m_birth01;
 	private String m_birth02;
 	private String m_birth03;
+	private String mail_id;
+	private String mail_domain;
 	private String m_date;
 	private int m_state;
 	private String m_delcont;
 	private String m_deldate;
-	
 	public String getM_id() {
 		return m_id;
 	}
@@ -82,18 +81,6 @@ public class MemberVO {
 	public void setM_phone03(String m_phone03) {
 		this.m_phone03 = m_phone03;
 	}
-	public String getMail_id() {
-		return mail_id;
-	}
-	public void setMail_id(String mail_id) {
-		this.mail_id = mail_id;
-	}
-	public String getMail_domain() {
-		return mail_domain;
-	}
-	public void setMail_domain(String mail_domain) {
-		this.mail_domain = mail_domain;
-	}
 	public String getM_birth01() {
 		return m_birth01;
 	}
@@ -111,6 +98,18 @@ public class MemberVO {
 	}
 	public void setM_birth03(String m_birth03) {
 		this.m_birth03 = m_birth03;
+	}
+	public String getMail_id() {
+		return mail_id;
+	}
+	public void setMail_id(String mail_id) {
+		this.mail_id = mail_id;
+	} 
+	public String getMail_domain() {
+		return mail_domain;
+	}
+	public void setMail_domain(String mail_domain) {
+		this.mail_domain = mail_domain;
 	}
 	public String getM_date() {
 		return m_date;

@@ -15,6 +15,9 @@ $(document).ready(function() {
 			$("#all_menu_div").css('display','none');
 		}
 	});
+	$('#all_menu_close').click(function(){
+		$("#all_menu_div").css('display','none');
+	});
 	$('#up_btn').click(function(){
 		window.scrollTo({top : 0, behavior:"smooth"});
 	});

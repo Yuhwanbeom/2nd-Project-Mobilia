@@ -9,11 +9,11 @@
 <title></title>
 <script>
 function categoryChange(e) {
-	var opt_a = ["single", "super_single", "double", "queen", "king"];
-	var opt_b = ["menu", "menu", "menu", "menu", "menu"];
-	var opt_c = ["menu", "menu", "menu", "menu", "menu"];
-	var opt_d = ["menu", "menu", "menu", "menu", "menu"];
-	var opt_e = ["menu", "menu", "menu", "menu", "menu"];
+	var opt_a = ["single", "super single", "double", "queen", "king"];
+	var opt_b = ["1인용 소파", "2~3인용 소파", "카우치형 소파", "리클라이너 소파"];
+	var opt_c = ["주방용 테이블", "사무용 테이블", "거실용 테이블", "H형 책상", "좌식 책상"];
+	var opt_d = ["식탁 의자", "책상 의자", "서재/사무용 의자", "침대형 의자", "게이밍 체어"];
+	var opt_e = ["옷장", "드레스룸", "수납장", "붙박이장", "신발장"];
 	var target = document.getElementById("p_category");
 
 	if(e.value == "bed") var d = opt_a;

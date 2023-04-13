@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.c_wrap{
+	width: 1300px;
+    margin: 0 auto 0;
+    padding: 30px 0 50px;
+    position:relative;
+    letter-spacing: 0px;
+    height:auto;
+}
+.clear{
+	clear:both;
+}
+#c_title{
+	text-align:center;
+	margin-bottom: 10px;
+}
+#c_category{
+	margin:30px 0px 10px 0px;
+	color:#999;
+}
+#c_category a{
+	margin:0px 30px 0px 30px;
+	text-decoration: none;
+	color:#999;
+}
+#c_category a:hover{
+	color:#333;
+}
