@@ -177,11 +177,5 @@
 		모빌리아 강남구 쇼룸에서 편안하게 둘러보며 확인해보세요.
 	
 	</div>
-		
-		
-		
-		
-		
-
 </div>
 <jsp:include page="../include/footer.jsp" />

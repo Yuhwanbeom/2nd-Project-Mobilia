@@ -14,6 +14,9 @@ create table product_list(
 	,p_date date					--상품 등록 날짜
 );
 select * from PRODUCT_list;
+commit;
+update product_list set p_category='super single' where p_category='super_single';
+drop table product_list;
 
 insert into product_list values(1,'2',1,1,1,1,'2','2',1,'2','1',sysdate);
 

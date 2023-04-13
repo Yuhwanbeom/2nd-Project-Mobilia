@@ -3,18 +3,6 @@
  */
 
 $(document).ready(function() {
-	$('.menu>li').mouseover(function() { //메뉴 마우스 오버 시 서브메뉴 슬라이드
-		$(this).find('.sub_menu').stop().slideDown();
-	}).mouseout(function() {
-		$(this).find('.sub_menu').stop().slideUp();
-	});
-	$(".all_menu").click(function(){
-		if($("#all_menu_div").css('display')=="none"){
-			$("#all_menu_div").css('display','block');
-		}else{
-			$("#all_menu_div").css('display','none');
-		}
-	});
 	$("#product_img>a>img").hover(function(){//이미지 마우스 오버 시 _on.png로 변경
 		/*var fileLength = e.length;
 		
@@ -27,13 +15,12 @@ $(document).ready(function() {
     });
 
 	var header = document.querySelector(".header");
-	var headerHeight = header.offsetHeight;
 	
 	window.onscroll = function(){
 		var windowTop = window.scrollY;
 	  	// 스크롤 세로값이 헤더높이보다 크거나 같으면 
 		// 헤더에 클래스 'drop'을 추가한다
-	  if (windowTop >= headerHeight) { //윈도우스크롤Y값이 헤더 높이보다 낮다면
+	  if (windowTop >= 750) { //윈도우스크롤Y값이 헤더 높이보다 낮다면
 	    header.classList.add("drop");
 	    $('#logo').html("<a href='main.net'><img src='./images/main/main_logo_02.png' alt='main_logo'></a>"); //logo 변경
 	    $('#sns').css("margin","10px 0px 0px 30px"); //sns margin값 변경
@@ -63,12 +50,6 @@ $(document).ready(function() {
 		var offset = $('#md_choice_p').offset(); //선택한 태그의 위치를 반환
             //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.8초 동안 부드럽게 해당 위치로 이동함 
         $('html').animate({scrollTop : offset.top}, 800);
-	});
-	$('#up_btn').click(function(){
-		window.scrollTo({top : 0, behavior:"smooth"});
-	});
-	$('#down_btn').click(function(){
-		window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"})
 	});
 	$('#all_menu_close').click(function(){
 		$("#all_menu_div").css('display','none');
