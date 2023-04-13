@@ -8,7 +8,7 @@
 <script src="./js/join.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
  <div class="title">
-<<<<<<< HEAD
+
   <h2>회원 가입 수정</h2>
   <h2>회원 가입해라</h2>
   <h1>여기는 테스트</h1>
