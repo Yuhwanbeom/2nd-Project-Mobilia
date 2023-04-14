@@ -204,4 +204,24 @@ public class MemberDAOImpl {
 		return mvo;
 	}
 
+
+	public void delMem(MemberVO mvo) {
+		
+		try {
+			con=ds.getConnection();
+			sql="update m_member set m_delcont=?, m_deldate=sysdate, m_state=2 "
+			+" where m_id=?";
+			pt=con.prepareStatement(sql);
+			pt.setString(1,mvo.getM_delcont());
+			pt.setString(2,mvo.getM_id());
+			pt.executeUpdate();//수정 쿼리문 성공후 성공한 레코드 행의 개수를 반환
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				if(pt != null) pt.close();
+				if(con != null) con.close();
+			}catch(Exception e) {e.printStackTrace();}
+		}
+	}
+
 }
