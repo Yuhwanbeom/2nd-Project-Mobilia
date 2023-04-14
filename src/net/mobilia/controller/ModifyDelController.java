@@ -11,6 +11,7 @@ public class ModifyDelController implements Action {
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out=response.getWriter();
 		HttpSession session=request.getSession();
 		
@@ -18,7 +19,7 @@ public class ModifyDelController implements Action {
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("./js/member/del_info.net"); 
+		forward.setPath("./views/member/del_info.jsp"); 
 		return forward;
 	}
 

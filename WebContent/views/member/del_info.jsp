@@ -90,7 +90,7 @@
 <body>
 <div id="del-info-area">
  <div id="del-info-title">
-  <img src="../../images/main/main_logo.png" alt="main_logo">
+  <img src="./images/main/main_logo.png" alt="main_logo">
   <h4>MOBILIA 회원탈퇴를 하시겠습니까?</h4>
  </div>
  <form name="m" method="post" action="modify_del_ok.net" onsubmit="return del_check();">
