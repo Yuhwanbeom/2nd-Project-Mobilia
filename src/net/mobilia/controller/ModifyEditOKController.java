@@ -18,6 +18,7 @@ public class ModifyEditOKController implements Action {
 	    PrintWriter out=response.getWriter();
 	    HttpSession session=request.getSession();
 	    
+	    
 	    String id=(String)session.getAttribute("id");//세션 아이디값을 구함.
 	    
 	    if(id==null) {
@@ -26,6 +27,7 @@ public class ModifyEditOKController implements Action {
 	    	out.println("location='main.net';");
 	    	out.println("</script>");
 	    }else {
+	    	
 	    	request.setCharacterEncoding("utf-8");
 	    	
 	    	String m_pwd = request.getParameter("m_pwd");
@@ -49,14 +51,21 @@ public class ModifyEditOKController implements Action {
 	    	m.setM_pwd(m_pwd); m.setM_name(m_name); m.setM_post(m_post); m.setM_roadAddr(m_roadAddr);
 	    	m.setM_jibunAddr(m_jibunAddr); m.setM_detailAddr(m_detailAddr); m.setM_phone01(m_phone01);
 	    	m.setM_phone02(m_phone02); m.setM_phone03(m_phone03); m.setMail_id(mail_id); m.setMail_domain(mail_domain);
-	    	m.setM_birth01(m_birth01); m.setM_birth02(m_birth02); m.setM_birth03(m_birth03);
+	    	m.setM_birth01(m_birth01); m.setM_birth02(m_birth02); m.setM_birth03(m_birth03); m.setM_id(id);
 	    	
-	    	mdao.updateMember(m);
+	    	int re = mdao.updateMember(m);
 	    	
+	    	if(re == -1) {
+	    		out.println("<script>");
+		    	out.println("alert('회원정보 수정 안됨"+m.getM_name()+m.getM_post()+"');");
+		    	out.println("history.go(-1);;");
+		    	out.println("</script>");
+	    	}else {
 	    	out.println("<script>");
 	    	out.println("alert('회원정보 수정 성공!');");
 	    	out.println("location='modify.net';");
 	    	out.println("</script>");
+	    	}
 	    }
 		return null;
 	}

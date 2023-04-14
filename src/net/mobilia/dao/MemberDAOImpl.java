@@ -101,13 +101,14 @@ public class MemberDAOImpl {
 	}
 
 
-	public void updateMember(MemberVO m) {
+	public int updateMember(MemberVO m) {
 
+		int re = -1;
 		try {
 			con = ds.getConnection();
 			sql = "update m_member set m_pwd=?, m_name=?, m_post=?, m_roadAddr=?, m_jibunAddr=?,"
-					+ "m_detailAddr=?, m_phone01=?, m_phone2=?, m_phone3=?, mail_id=?, mail_domain=?,"
-					+ "m_birth01=?, m_birth02=?, m_birth03=?";
+					+ "m_detailAddr=?, m_phone01=?, m_phone02=?, m_phone03=?, mail_id=?, mail_domain=?,"
+					+ "m_birth01=?, m_birth02=?, m_birth03=? where m_id=?";
 			pt = con.prepareStatement(sql);
 			pt.setString(1, m.getM_pwd());
 			pt.setString(2, m.getM_name());
@@ -123,7 +124,9 @@ public class MemberDAOImpl {
 			pt.setString(12, m.getM_birth01());
 			pt.setString(13, m.getM_birth01());
 			pt.setString(14, m.getM_birth01());
-
+			pt.setString(15, m.getM_id());
+			
+			re = pt.executeUpdate();
 		}catch(Exception e) {e.printStackTrace();}
 		finally {
 			try {
@@ -131,7 +134,7 @@ public class MemberDAOImpl {
 				if(con != null) con.close();
 			}catch(Exception e) {e.printStackTrace();}
 		}
-
+		return re;
 	}//updateMember()
 
 
