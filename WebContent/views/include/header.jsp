@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +18,13 @@
 		<header class="header"> 
 	<%-------------------------------------- 로그인쪽 메뉴 ------------------------------------%>
 			<div id="login"> 
-				<a href="#">Login</a> <a href="join.net">Join</a> <a href="#">Cart</a> <a
-					href="myshop.net">Myshop</a> <a href="#">Community</a>
+			<c:if test="${empty id}">
+				<a href="login.net">Login</a> <a href="join.net">Join</a>
+			</c:if>
+			<c:if test="${!empty id}">
+			 	<a href="logout.net">Logout</a> <a href="modify.net">Modify</a>
+			</c:if>
+			<a href="#">Cart</a> <a href="myshop.net">Myshop</a> <a href="#">Community</a>
 			</div>
 			<%-------------------------------------- 로고 ------------------------------------%>
 			<div id="logo">
