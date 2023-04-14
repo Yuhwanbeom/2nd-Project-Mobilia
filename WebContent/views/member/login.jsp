@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <jsp:include page="../include/header.jsp" />
-<link rel="stylesheet" type="text/css" href="./css/login.css">
+<link rel="stylesheet" type="text/css" href="./css/member/login.css">
     <div class="login_containers">
         <h2>
             로그인
