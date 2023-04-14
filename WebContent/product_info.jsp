@@ -13,7 +13,25 @@ $(document).ready(function() {
 	},function(){
 		$("#buyBtn>a").css("color","white");
 	});
+	$("#cartBtn").hover(function(){
+		$("#cartBtn>a").css("color","#333");
+	},function(){
+		$("#cartBtn>a").css("color","white");
+	});
 });
+
+function review_check(){
+    var _width = '400';
+    var _height = '600';
+ 
+	var url="review_write.net";//매핑주소
+    // 팝업을 가운데 위치시키기 위해 아래와 같이 값 구하기
+    var _left = Math.ceil(( window.screen.width - _width )/2);
+    var _top = Math.ceil(( window.screen.height - _height )/2)-50; 
+ 
+    window.open(url,'사용후기작성','width='+_width+',height='+_height 
+    		+', left='+ _left+',top='+_top);
+	}
 </script>
 </head>
 <body>
@@ -142,14 +160,41 @@ $(document).ready(function() {
 				</ul>
 			</div>
 		</div>
-		<div id="replyArea">
-			<ul id="replybar">
-				<li>사용후기</li>
-				<li>상품문의</li>
-				<li>상품정보</li>
-				<li>구매안내</li>
-				<li>구매하기</li>
-			</ul>
+		<div id="contents">
+			<div id="replyArea">
+				<ul id="replybar">
+					<li>상품정보</li>
+					<li>구매안내</li>
+					<li>상품후기</li>
+					<li>상품문의</li>
+					<li>구매하기</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div id="review_container">
+				<div id="review_title">상품후기 <span>(46)</span></div>
+				<div id="review">
+					<ul>
+						<li><img src="./images/bed/bed01.png" width="50" height="50"></li>
+						<li id="m_id"><span>kuil****</span>
+						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
+					</ul>
+				</div>
+				<div id="review">
+					<ul>
+						<li><img src="./images/bed/bed01.png" width="50" height="50"></li>
+						<li id="m_id"><span>kuil****</span>
+						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
+					</ul>
+				</div>
+				<div id="review">
+					<ul>
+						<li><img src="./images/bed/bed01.png" width="50" height="50"></li>
+						<li id="m_id"><span>kuil****</span>
+						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
