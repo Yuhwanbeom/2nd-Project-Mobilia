@@ -42,6 +42,13 @@ public class ModifyDelOKController implements Action {
 				MemberVO mvo = new MemberVO();
 				mvo.setM_id(id); mvo.setM_delcont(m_delcont);
 				mdao.delMem(mvo);
+				
+				session.invalidate();
+				
+				out.println("<script>");
+				out.println("alert('회원탈퇴가 처리되었습니다.");
+				out.println("location='main.net';");
+				out.println("</script>");
 			}
 		}
 		return null;
