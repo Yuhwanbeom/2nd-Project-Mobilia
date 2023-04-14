@@ -1,9 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title></title>
+<jsp:include page="../include/header.jsp" />
 <link rel="stylesheet" type="text/css" href="./css/product_info.css">
 <script src="./js/jquery.js"></script>
 <script type="text/javascript">
@@ -172,30 +168,76 @@ function review_check(){
 			</div>
 			<div class="clear"></div>
 			<div id="review_container">
-				<div id="review_title">상품후기 <span>(46)</span></div>
-				<div id="review">
-					<ul>
-						<li><img src="./images/bed/bed01.png" width="50" height="50"></li>
-						<li id="m_id"><span>kuil****</span>
-						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
-					</ul>
+				<div id="titleCon">	
+					<div id="review_title">상품후기 <span>(46)</span></div>
+					<input type="button" id="reviewBtn"onclick="review_check();" value="후기 작성">
+					<p>상품과 무관한 사진 및 욕설/비속어가 포함된 리뷰는 고지 없이 삭제될 수 있습니다.<br>
+						구매하신 상품을 직접 촬영한 사진만 리뷰 등록 및 마일리지 지급이 가능합니다.<br>
+						위의 사유들로 인해 고지 없이 사진 및 리뷰가 삭제된 경우, 지급된 마일리지 일부 또는 전액이 회수될 수 있습니다.<br>
+						작성하신 리뷰의 사진 및 글은 마케팅에 활용될 수 있습니다.</p>
 				</div>
 				<div id="review">
 					<ul>
-						<li><img src="./images/bed/bed01.png" width="50" height="50"></li>
-						<li id="m_id"><span>kuil****</span>
+						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
+						<li id="m_id"><span>kuil**** | 2023-04-14</span>
 						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
 					</ul>
 				</div>
+				<div class="clear"></div>
 				<div id="review">
 					<ul>
-						<li><img src="./images/bed/bed01.png" width="50" height="50"></li>
-						<li id="m_id"><span>kuil****</span>
+						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
+						<li id="m_id"><span>kuil**** | 2023-04-14</span>
 						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
 					</ul>
 				</div>
+				<div class="clear"></div>
+				<div id="review">
+					<ul>
+						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
+						<li id="m_id"><span>kuil**** | 2023-04-14</span>
+						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div id="consult_container">
+				<div id="titleCon">	
+					<div id="review_title">상품문의 <span>(46)</span></div>
+					<input type="button" id="reviewBtn"onclick="review_check();" value="문의 작성">
+					<p>상품과 무관한 질문 및 욕설/비속어가 포함된 문의는 고지 없이 삭제될 수 있습니다.<br>
+						선택하신 상품과 관련된 문의를 부탁 드립니다.<br>
+						전화 문의 : 02-2222-2222~4 <br>
+						Monday - Friday : 09:00 ~ 19:00 Sat &amp; Sunday : OFF <br>
+						Holiday : 13:00 ~ 19:00<br>
+				</div>
+				
+				<div id="review">
+					<ul>
+						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
+						<li id="m_id"><span>kuil**** | 2023-04-14</span>
+						<li id="m_review"><span>비공개 문의입니다.</span>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div id="review">
+					<ul>
+						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
+						<li id="m_id"><span>kuil**** | 2023-04-14</span>
+						<li id="m_review"><span>비공개 문의입니다.</span>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div id="review">
+					<ul>
+						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
+						<li id="m_id"><span>kuil**** | 2023-04-14</span>
+						<li id="m_review"><span>비공개 문의입니다.</span>
+					</ul>
+				</div>
+				<div class="clear"></div>
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+<jsp:include page="../include/footer.jsp" />
