@@ -47,7 +47,7 @@ public class ModifyDelOKController implements Action {
 				
 				out.println("<script>");
 				out.println("alert('회원탈퇴가 처리되었습니다.");
-				out.println("location='main.net';");
+				out.println("./views/index.jsp");
 				out.println("</script>");
 			}
 		}
