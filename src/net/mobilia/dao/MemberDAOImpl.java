@@ -122,8 +122,8 @@ public class MemberDAOImpl {
 			pt.setString(10, m.getMail_id());
 			pt.setString(11, m.getMail_domain());
 			pt.setString(12, m.getM_birth01());
-			pt.setString(13, m.getM_birth01());
-			pt.setString(14, m.getM_birth01());
+			pt.setString(13, m.getM_birth02());
+			pt.setString(14, m.getM_birth03());
 			pt.setString(15, m.getM_id());
 			
 			re = pt.executeUpdate();
