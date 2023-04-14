@@ -124,6 +124,15 @@ select{
 	font-weight: 400;
 	color:gray;
 }
+.replyArea{
+	width:1300px;
+	bottom:0;
+  	position: fixed;
+    margin: 0 auto 0;
+    padding: 0;
+    text-align: center;
+    display:none;
+}
 #replyArea{
 	position: relative;
     margin: 0 auto 0;
@@ -139,6 +148,31 @@ select{
 }
 #replybar li{
 	font-weight:600;
+	height:28px;
+	width:18%;
+	float:left;
+	list-style:none;
+	text-align: center;
+	padding-top:10px;
+	transition:all .3s ease;
+	padding-right:6px;
+	border: 1px solid #333;
+	background:white;
+	color:#333;
+	border-radius: 5px;
+}
+#replybar li:hover{
+	color:#39d9c8;
+	cursor: pointer;
+	background:#333;
+	transition:all .3s ease;
+}
+.replyber ul{
+	list-style:none;
+	padding-left:0px;
+}
+.replybar li{
+	font-weight:600;
 	height:32px;
 	width:18%;
 	float:left;
@@ -149,7 +183,7 @@ select{
 	padding-right:6px;
 	border-bottom: 1px solid #333;
 }
-#replybar li:hover{
+.replybar li:hover{
 	color:#39d9c8;
 	transition:all .3s ease;
 	cursor: pointer;

@@ -2,35 +2,16 @@
 <jsp:include page="../include/header.jsp" />
 <link rel="stylesheet" type="text/css" href="./css/product_info.css">
 <script src="./js/jquery.js"></script>
-<script type="text/javascript">
-$(document).ready(function() {
-	$("#buyBtn").hover(function(){
-		$("#buyBtn>a").css("color","#333");
-	},function(){
-		$("#buyBtn>a").css("color","white");
-	});
-	$("#cartBtn").hover(function(){
-		$("#cartBtn>a").css("color","#333");
-	},function(){
-		$("#cartBtn>a").css("color","white");
-	});
-});
-
-function review_check(){
-    var _width = '400';
-    var _height = '600';
- 
-	var url="review_write.net";//매핑주소
-    // 팝업을 가운데 위치시키기 위해 아래와 같이 값 구하기
-    var _left = Math.ceil(( window.screen.width - _width )/2);
-    var _top = Math.ceil(( window.screen.height - _height )/2)-50; 
- 
-    window.open(url,'사용후기작성','width='+_width+',height='+_height 
-    		+', left='+ _left+',top='+_top);
-	}
-</script>
+<script src="./js/product_info.js"></script>
 </head>
 <body>
+<div>
+<%-------------------------- 사이드 버튼 2 ------------------------%>
+		<span id="sidebar_02">
+			<input type="button" class= "side_btn_02" id="up_btn">
+			<input type="button" class= "side_btn_02" id="down_btn">
+		</span>
+</div>
 	<div id="contents">
 		<div id="detail">
 			<div id="keyImg">
@@ -157,8 +138,17 @@ function review_check(){
 			</div>
 		</div>
 		<div id="contents">
-			<div id="replyArea">
+			<div class="replyArea">
 				<ul id="replybar">
+					<li>상품정보</li>
+					<li>구매안내</li>
+					<li>상품후기</li>
+					<li>상품문의</li>
+					<li>구매하기</li>
+				</ul>
+			</div>
+			<div id="replyArea">
+				<ul class="replybar">
 					<li>상품정보</li>
 					<li>구매안내</li>
 					<li>상품후기</li>
