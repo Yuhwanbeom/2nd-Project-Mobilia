@@ -26,6 +26,9 @@ create table m_member(
 insert into m_member(m_id,m_pwd,m_name,m_post,m_roadAddr,m_jibunAddr,m_detailAddr,m_phone01,m_phone02,m_phone03,m_birth01,m_birth02,m_birth03,mail_id,mail_domain,m_date,m_state)
 values('bbbbb','qwe123!','홍','07941','서울 양천구 국회대로 132','서울 양천구 신정동 938-1','101','010','1111','1111','1997','09','30','sungk97','naver.com',sysdate,1);
 
+update m_member set m_pwd='qwe123!', m_name='홍홍', m_post='07941', m_roadAddr='서울 양천구 국회대로 132', m_jibunAddr='서울 양천구 신정동 938-1', m_detailAddr='101', m_phone01='010', m_phone02='1111', m_phone03='1111', mail_id='sung97',
+mail_domain='naver.com', m_birth01=1997, m_birth02=09, m_birth03=30 where m_id='bbbbb'
+                    
 select * from m_member order by m_id desc;
 
 commit;

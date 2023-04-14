@@ -3,6 +3,7 @@
 <jsp:include page="../include/myshop_left-look.jsp" />
 <script src="./js/member/join.js"></script>
 <script src="./js/member/modify.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
    <h2>회원 정보 수정</h2>
   </div>
   <div class="myshop-welcome">
@@ -54,21 +55,22 @@
     <tr>
      <th id="post-th">주소<b class="star">*</b></th>
      <td>
-     <input type="text" id="m_post" placeholder="우편번호" value="${mvo.m_post}" style="width:80px;" readonly>
+     <input type="text" id="m_post" name="m_post" placeholder="우편번호" value="${mvo.m_post}" style="width:80px;" readonly>
 	<input type="button" onclick="post_check()" value="우편번호 찾기"><br><br>
-	<input type="text" id="m_roadAddr" placeholder="도로명주소" value="${mvo.m_roadAddr}" style="width:260px;" readonly>
-	<input type="text" id="m_jibunAddr" placeholder="지번주소" value="${mvo.m_jibunAddr}" style="width:260px;" readonly>
+	<input type="text" id="m_roadAddr" name="m_roadAddr" placeholder="도로명주소" value="${mvo.m_roadAddr}" style="width:260px;" readonly>
+	<input type="text" id="m_jibunAddr" name="m_jibunAddr" placeholder="지번주소" value="${mvo.m_jibunAddr}" style="width:260px;" readonly>
 	<span id="guide" style="color:#999;display:none"></span>
-	<input type="text" id="m_detailAddr" placeholder="상세주소" value="${mvo.m_detailAddr}" style="width:200px;">
+	<input type="text" id="m_detailAddr" name="m_detailAddr" placeholder="상세주소" value="${mvo.m_detailAddr}" style="width:200px;">
      </td>
     </tr>
     
     <tr>
      <th class="edit-th">휴대전화<b class="star">*</b></th>
      <td>
-      <select id="m_phone1" name="m_phone1" value="${mvo.m_phone01}" style="width:80px; height:30px; margin-left:12px; margin-right:12px;">
+      <select id="m_phone1" name="m_phone1" style="width:80px; height:30px; margin-left:12px; margin-right:12px;">
        <c:forEach var="p" items="${phone}">
-        <option value="${p}">${p}</option>
+        <option value="${p}"
+        <c:if test="${mvo.m_phone01 == p}"> ${'selected'}</c:if>>${p}</option>
        </c:forEach>
       </select>
       -
