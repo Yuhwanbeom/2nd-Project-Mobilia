@@ -147,6 +147,7 @@ select{
 	padding-top:10px;
 	transition:all .3s ease;
 	padding-right:6px;
+	border-bottom: 1px solid #333;
 }
 #replybar li:hover{
 	color:#39d9c8;
@@ -154,9 +155,11 @@ select{
 	cursor: pointer;
 }
 #review{
+	display:block;
 	widht:100%;
 	height:100px;
-	margin-top:30px;
+	padding:10px 0px 45px 0px;
+	border-bottom: 1px solid #e8e8e8;
 }
 #review_container{
 	width:100%;
@@ -164,12 +167,16 @@ select{
 	text-align: left;
 }
 #review_title{
-	width:100%;
+	margin-left:30px;
+	display:inline-block;
+	width:120px;
 	padding:30px 0px 30px;
-	border-top:1px solid #333;
-	border-bottom: 1px solid #e8e8e8;
 	font-size:14px;
 	font-weight: 600;
+}
+#review ul{
+	display:block;
+	padding-bottom: 20px;
 }
 #review li{
 	padding-bottom:15px;
@@ -178,6 +185,20 @@ select{
 #review img{
 	display:inline-block;
 }
+#titleCon{
+	width:100%;
+	margin-top:50px;
+	margin-bottom:20px;
+	border-bottom: 1px solid #e8e8e8;
+	height:auto;
+}
+#titleCon p{
+	margin-left:30px;
+	font-size:12px;
+	font-weight: 400;
+	color:gray;
+	padding-bottom:10px;
+}
 #m_id{
 	font-size:14px;
 	font-weight: 600;
@@ -185,4 +206,31 @@ select{
 #m_review{
 	font-size:13px;
 	margin-bottom: 20px;
+}
+#reviewBtn{
+	border:1px solid #333;
+	background:#333;
+	color:white;
+	margin-top:27px;
+	margin-right:30px;
+	float:right;
+	display:inline-block;
+	width:120px;
+	height:35px;
+	border-radius: 10px;
+	transition:all .2s ease;
+	font-weight: 600;
+}
+#reviewBtn:hover{
+	background:white;
+	color:#333;
+	transition:all .2s ease;
+	cursor:pointer;
+}
+#consult_container{
+	margin-top:50px;
+	float:left;
+	width:100%;
+	text-align: left;
+	border-top:1px solid #e8e8e8;
 }
