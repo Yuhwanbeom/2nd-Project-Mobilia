@@ -10,7 +10,7 @@ public class ReviewWriteController implements Action {
 		
 		ActionForward forward=new ActionForward();
 		forward.setRedirect(false);
-		forward.setPath("./review_write.jsp");
+		forward.setPath("./views/product/review_write.jsp");
 		
 		return forward;
 	}
