@@ -36,6 +36,7 @@ public class ModifyDelOKController implements Action {
 			
 			if(!m_pwd.getM_pwd().contentEquals(del_pwd)) {
 				out.println("<script>");
+				//out.println("history.back();");
 				out.println("alert('비밀번호가 일치하지 않습니다!);");
 				out.println("</script>");
 			}else {
@@ -46,6 +47,7 @@ public class ModifyDelOKController implements Action {
 				session.invalidate();
 				
 				out.println("<script>");
+				out.println("parent.window.close();");
 				out.println("alert('회원탈퇴가 처리되었습니다.");
 				out.println("./views/index.jsp");
 				out.println("</script>");

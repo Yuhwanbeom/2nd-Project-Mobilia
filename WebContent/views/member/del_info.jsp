@@ -45,7 +45,7 @@
  	cursor:pointer;
  }
 </style>
-<script src="../../js/jquery.js"></script>
+<script src="./js/jquery.js"></script>
 <%
  String[] deltext = {"선택", "없음", "이용이 불편하고 장애가 많아서", "다른사이트가 더 좋아서",
 		 "사용빈도가 낮아서", "콘텐츠 불만","직접입력"};
@@ -53,6 +53,8 @@
  request.setAttribute("deltext", deltext);
 %>
 <script>
+
+
  function deltext_list(){
 	 var num=m.del_text.selectedIndex;
 	 
@@ -77,14 +79,21 @@
 	 
 	 if($.trim($("#del_pwd").val()) == ""){
 			alert("비밀번호를 입력하세요!");
+			alert(#.trim($("#m_pwd").val()));
 			$("#del_pwd").val("").focus();
 			return false;
-	 }
-	 if($.trim($("#m_delcont").val()) == ""){
+	 }else if($.trim($("#m_delcont").val()) == ""){
 		 alert("탈퇴사유를 선택해주세요!");
 		 $("#del-text").focus();
 		 return false;
 	 }
+	 else if( ){
+		 alert("비밀번호가 일치하지 않습니다!")
+		 return false;
+	 }else{
+		 parent.window.close();
+	 }
+	 
  }
 </script>
 <body>
@@ -95,7 +104,8 @@
  </div>
  <form name="m" method="post" action="modify_del_ok.net" onsubmit="return del_check();">
  <div id="del-info-input">
-  <label>비밀번호입력</label>&nbsp;&nbsp;<input type="password" id="del_pwd" name="del_pwd"><br><br>
+  <label>비밀번호입력</label>&nbsp;&nbsp;<input type="password" id="del_pwd" name="del_pwd">
+  <input type="hidden" id="m_pwd" name="m_pwd" value="${mvo.m_pwd}"><br><br>
   <label>탈퇴사유입력</label>&nbsp;&nbsp;
   <select id="del-text" name="del_text" onchange="deltext_list();">
   <c:forEach var="d" items="${deltext}">

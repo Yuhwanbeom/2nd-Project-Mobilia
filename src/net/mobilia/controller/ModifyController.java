@@ -35,7 +35,7 @@ public class ModifyController implements Action {
 		request.setAttribute("phone", phone);
 		request.setAttribute("email", email);
 		
-		MemberVO mvo = mdao.getMember(id);
+		MemberVO mvo = mdao.loginCheck(id);//del_info에서 비밀번호를 비교하기 위해서 저장된 비밀번호를 가져옴
 		
 		request.setAttribute("mvo", mvo);
 		ActionForward forward = new ActionForward();
