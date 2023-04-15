@@ -100,7 +100,7 @@ public class MemberDAOImpl {
 		return null;
 	}
 
-
+	//회원정보 수정
 	public int updateMember(MemberVO m) {
 
 		int re = -1;
@@ -137,7 +137,7 @@ public class MemberDAOImpl {
 		return re;
 	}//updateMember()
 
-
+	//아이디를 기준으로 비밀번호를 가져옴
 	public MemberVO loginCheck(String m_id) {
 		MemberVO m=null;
 
@@ -164,7 +164,7 @@ public class MemberDAOImpl {
 		return m;
 	}
 
-
+	//회원정보 가져오기
 	public MemberVO getMember(String id) {
 		
 		MemberVO mvo=null;
@@ -204,7 +204,7 @@ public class MemberDAOImpl {
 		return mvo;
 	}
 
-
+	//회원탈퇴
 	public void delMem(MemberVO mvo) {
 		
 		try {

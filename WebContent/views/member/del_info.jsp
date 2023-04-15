@@ -45,7 +45,7 @@
  	cursor:pointer;
  }
 </style>
-<script src="../../js/jquery.js"></script>
+<script src="./js/jquery.js"></script>
 <%
  String[] deltext = {"선택", "없음", "이용이 불편하고 장애가 많아서", "다른사이트가 더 좋아서",
 		 "사용빈도가 낮아서", "콘텐츠 불만","직접입력"};
@@ -53,6 +53,8 @@
  request.setAttribute("deltext", deltext);
 %>
 <script>
+
+
  function deltext_list(){
 	 var num=m.del_text.selectedIndex;
 	 
@@ -79,12 +81,12 @@
 			alert("비밀번호를 입력하세요!");
 			$("#del_pwd").val("").focus();
 			return false;
-	 }
-	 if($.trim($("#m_delcont").val()) == ""){
+	 }else if($.trim($("#m_delcont").val()) == ""){
 		 alert("탈퇴사유를 선택해주세요!");
 		 $("#del-text").focus();
 		 return false;
 	 }
+	 
  }
 </script>
 <body>
