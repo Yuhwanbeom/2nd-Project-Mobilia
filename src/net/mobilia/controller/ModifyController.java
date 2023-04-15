@@ -25,7 +25,7 @@ public class ModifyController implements Action {
 	    if(id == null) {
 	    	out.println("<script>");
 	    	out.println("alert('다시 로그인 하세요!');");
-	    	out.println("location='main.net';");
+	    	out.println("location='login.net';");
 	    	out.println("</script>");
 	    }else {
 	    	
@@ -35,7 +35,7 @@ public class ModifyController implements Action {
 		request.setAttribute("phone", phone);
 		request.setAttribute("email", email);
 		
-		MemberVO mvo = mdao.loginCheck(id);//del_info에서 비밀번호를 비교하기 위해서 저장된 비밀번호를 가져옴
+		MemberVO mvo = mdao.getMember(id);//회원정보창에 뿌리기 위한 회원정보를 가져옴
 		
 		request.setAttribute("mvo", mvo);
 		ActionForward forward = new ActionForward();

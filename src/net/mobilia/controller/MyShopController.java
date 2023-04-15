@@ -22,8 +22,8 @@ public class MyShopController implements Action {
 	    
 	    if(id == null) {
 	    	out.println("<script>");
-	    	out.println("alert('다시 로그인 하세요!');");
-	    	out.println("location='member_login.daum';");
+	    	out.println("alert('로그인이 필요합니다!');");
+	    	out.println("location='login.net';");
 	    	out.println("</script>");
 	    }else {
 	    	

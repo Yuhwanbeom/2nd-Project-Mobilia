@@ -79,19 +79,12 @@
 	 
 	 if($.trim($("#del_pwd").val()) == ""){
 			alert("비밀번호를 입력하세요!");
-			alert(#.trim($("#m_pwd").val()));
 			$("#del_pwd").val("").focus();
 			return false;
 	 }else if($.trim($("#m_delcont").val()) == ""){
 		 alert("탈퇴사유를 선택해주세요!");
 		 $("#del-text").focus();
 		 return false;
-	 }
-	 else if( ){
-		 alert("비밀번호가 일치하지 않습니다!")
-		 return false;
-	 }else{
-		 parent.window.close();
 	 }
 	 
  }
@@ -104,8 +97,7 @@
  </div>
  <form name="m" method="post" action="modify_del_ok.net" onsubmit="return del_check();">
  <div id="del-info-input">
-  <label>비밀번호입력</label>&nbsp;&nbsp;<input type="password" id="del_pwd" name="del_pwd">
-  <input type="hidden" id="m_pwd" name="m_pwd" value="${mvo.m_pwd}"><br><br>
+  <label>비밀번호입력</label>&nbsp;&nbsp;<input type="password" id="del_pwd" name="del_pwd"><br><br>
   <label>탈퇴사유입력</label>&nbsp;&nbsp;
   <select id="del-text" name="del_text" onchange="deltext_list();">
   <c:forEach var="d" items="${deltext}">

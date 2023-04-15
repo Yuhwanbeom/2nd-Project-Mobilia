@@ -23,13 +23,10 @@ public class ModifyDelController implements Action {
 		if(id == null) {
 	    	out.println("<script>");
 	    	out.println("alert('다시 로그인 하세요!');");
-	    	out.println("location='main.net';");
+	    	out.println("location='login.net';");
 	    	out.println("</script>");
 	    }else {
-		MemberDAOImpl mdao=new MemberDAOImpl();
-		MemberVO mvo = mdao.getMember(id);
 		
-		request.setAttribute("mvo", mvo);
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);
 		forward.setPath("./views/member/del_info.jsp"); 
