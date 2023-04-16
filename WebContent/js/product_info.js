@@ -27,6 +27,27 @@ $(document).ready(function(){
 	},function(){
 		$("#cartBtn>a").css("color","white");
 	});
+	
+	$('#infoP_scroll').click(function(){
+		var offset = $('#sub_info').offset(); //선택한 태그의 위치를 반환
+        $('html').animate({scrollTop : offset.top}, 800);
+	});
+	$('#infoB_scroll').click(function(){
+		var offset = $('#info_text').offset(); //선택한 태그의 위치를 반환
+        $('html').animate({scrollTop : offset.top -12}, 800);
+	});
+	$('#review_scroll').click(function(){
+		var offset = $('#review_container').offset(); //선택한 태그의 위치를 반환
+        $('html').animate({scrollTop : offset.top}, 800);
+	});
+	$('#inquiry_scroll').click(function(){
+		var offset = $('#consult_container').offset(); //선택한 태그의 위치를 반환
+        $('html').animate({scrollTop : offset.top}, 800);
+	});
+	$('#buy_scroll').click(function(){
+		var offset = $('#thum').offset(); //선택한 태그의 위치를 반환
+        $('html').animate({scrollTop : offset.top-110}, 800);
+	});
 });
 
 function review_check(){
@@ -53,3 +74,4 @@ function inquiry_check(){
     window.open(url,'사용후기작성','width='+_width+',height='+_height 
     		+', left='+ _left+',top='+_top);
 }
+	

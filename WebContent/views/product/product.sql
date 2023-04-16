@@ -15,6 +15,7 @@ create table product_list(
 );
 select * from PRODUCT_list;
 
+delete product_list;
 commit;
 
 update product_list set p_category='super single' where p_category='super_single';
