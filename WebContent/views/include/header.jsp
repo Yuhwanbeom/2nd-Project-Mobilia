@@ -24,7 +24,7 @@
 			<c:if test="${!empty id}">
 			 	<a href="logout.net">Logout</a> <a href="modify.net">Modify</a>
 			</c:if>
-			<a href="#">Cart</a> <a href="myshop.net">Myshop</a> <a href="#">Community</a>
+			<a href="#">Cart</a> <a href="myshop.net">Myshop</a> <a href="qna.net">Community</a>
 			</div>
 			<%-------------------------------------- 로고 ------------------------------------%>
 			<div id="logo">
@@ -156,7 +156,7 @@
 							<li><a href="list_cabinet.net?c=cabinet&state=신발장">신발장</a></li>
 						</ul>
 					</li>
-					<li><a href="#">About us</a>
+					<li><a href="about_us_location.net">About us</a>
 						<ul class="sub_menu">
 							<li><a href="#">menu 01</a>
 							<li><a href="#">menu 02</a>
