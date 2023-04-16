@@ -29,6 +29,7 @@
 				<textarea rows="15" cols="40" placeholder="후기를 입력하세요."></textarea>
 			</div>
 			<div>
+				<input type="hidden" id="p_no" value="">
 				<input id="reviewBtn" type="submit" value="등록" onclick="review_wirte_ok.net">
 				<input id="cancelBtn" type="button" value="취소" onclick="">
 			</div>

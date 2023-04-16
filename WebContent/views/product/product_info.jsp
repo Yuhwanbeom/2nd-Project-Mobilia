@@ -34,7 +34,8 @@
 						</th>
 						<td><span
 							style="font-size: 13px; color: #a1a1a1; font-weight: bold; text-decoration: line-through;">
-								<fmt:formatNumber value="${pv.p_before_price}" pattern="###,###,###"/>원</span></td>
+								<fmt:formatNumber value="${pv.p_before_price}" pattern="###,###,###"/>원</span>
+						</td>
 					</tr>
 					<tr>
 						<th><span
@@ -42,10 +43,13 @@
 						</th>
 						<td><span
 							style="font-size: 13px; color: #971215; font-weight: bold;">
-								<span id="span_product_price_sale">
-							<fmt:formatNumber value="${pv.p_price}" pattern="###,###,###"/><strong>원</strong>
+								<span>
+									<fmt:formatNumber value="${pv.p_price}" pattern="###,###,###"/>
+									<input type="hidden" value="${pv.p_price}" id="p_price">
+								</span>	
+								<strong>원</strong>
 							</span>
-						</span></td>
+						</td>
 					</tr>
 					<tr>
 						<th><span style="font-size: 15px; color: #333333;">상품설명</span>
@@ -77,12 +81,19 @@
 					</tr>
 					<tr>
 						<th>수량</th>
-						<td>-1-</td>
+						<td>
+							<input type='button' id="amount_minus" class="a_btn"onclick='count("minus");' value="-"/>
+							<input type="text" id="amount_count" size="1"  value="1" readonly>
+							<input type='button' id="amount_plus" class="a_btn" onclick='count("plus");' value="+"/>
+							<span id="amount_info">(최대 : <span id="p_amount"><b>${pv.p_amount}</b></span>개)</span>
+						</td>
 					</tr>
 					<tr>
-						<th colspan="2"><div>
-								<h1>${pv.p_price}원</h1>
-							</div></th>
+						<th colspan="2">
+							<div id="result_price">
+								<h1><fmt:formatNumber value="${pv.p_price}" pattern="###,###,###"/>원</h1>
+							</div>
+						</th>
 					</tr>
 				</table>
 			</div>
@@ -152,6 +163,7 @@
 			<div id="review_container">
 				<div id="titleCon">	
 					<div id="review_title">상품후기 <span>(46)</span></div>
+					<input type="hidden" id="p_no" value="${pv.p_no}">
 					<input type="button" id="reviewBtn"onclick="review_check();" value="후기 작성">
 					<p>상품과 무관한 사진 및 욕설/비속어가 포함된 리뷰는 고지 없이 삭제될 수 있습니다.<br>
 						구매하신 상품을 직접 촬영한 사진만 리뷰 등록 및 마일리지 지급이 가능합니다.<br>
