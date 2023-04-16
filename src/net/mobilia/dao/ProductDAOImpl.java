@@ -150,8 +150,7 @@ public class ProductDAOImpl {
 		try {
 			
 			con=ds.getConnection();
-			sql="select p_img1,p_img2,p_name,p_before_price,p_price from product_list "
-					+ "where p_class=? order by p_no desc";
+			sql="select * from product_list where p_class=? order by p_no desc";
 			pt=con.prepareStatement(sql);
 			pt.setString(1, c);
 			rs=pt.executeQuery();
@@ -159,11 +158,18 @@ public class ProductDAOImpl {
 			while(rs.next()) {
 				//복수개의 레코드가 검색되는 경우는 while 반복문으로 반복
 				ProductVO pv=new ProductVO();
-				pv.setP_img1(rs.getString("p_img1"));
-				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_no(rs.getInt("p_no"));
 				pv.setP_name(rs.getString("p_name"));
 				pv.setP_before_price(rs.getInt("p_before_price"));
 				pv.setP_price(rs.getInt("p_price"));
+				pv.setP_amount(rs.getInt("p_amount"));
+				pv.setP_sold(rs.getInt("p_sold"));
+				pv.setP_img1(rs.getString("p_img1"));
+				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_choice(rs.getInt("p_choice"));
+				pv.setP_class(rs.getString("p_class"));
+				pv.setP_category(rs.getString("p_category"));
+				pv.setP_date(rs.getString("p_date"));
 				
 				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
 				pv.setP_rate(rate);
@@ -191,7 +197,7 @@ public class ProductDAOImpl {
 		try {
 			
 			con=ds.getConnection();
-			sql="select p_img1,p_img2,p_name,p_before_price,p_price from product_list "
+			sql="select * from product_list "
 					+ "where p_class=? and p_category=? order by p_no desc";
 			pt=con.prepareStatement(sql);
 			pt.setString(1, c);
@@ -201,11 +207,18 @@ public class ProductDAOImpl {
 			while(rs.next()) {
 				//복수개의 레코드가 검색되는 경우는 while 반복문으로 반복
 				ProductVO pv=new ProductVO();
-				pv.setP_img1(rs.getString("p_img1"));
-				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_no(rs.getInt("p_no"));
 				pv.setP_name(rs.getString("p_name"));
 				pv.setP_before_price(rs.getInt("p_before_price"));
 				pv.setP_price(rs.getInt("p_price"));
+				pv.setP_amount(rs.getInt("p_amount"));
+				pv.setP_sold(rs.getInt("p_sold"));
+				pv.setP_img1(rs.getString("p_img1"));
+				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_choice(rs.getInt("p_choice"));
+				pv.setP_class(rs.getString("p_class"));
+				pv.setP_category(rs.getString("p_category"));
+				pv.setP_date(rs.getString("p_date"));
 				
 				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
 				pv.setP_rate(rate);
@@ -232,7 +245,7 @@ public class ProductDAOImpl {
 		try {
 			
 			con=ds.getConnection();
-			sql="select p_img1,p_img2,p_name,p_before_price,p_price,p_sold from product_list "
+			sql="select * from product_list "
 					+ "where p_class=? ";
 			if(m.equals("new")) {
 				sql+="order by p_no desc";
@@ -252,11 +265,18 @@ public class ProductDAOImpl {
 			while(rs.next()) {
 				//복수개의 레코드가 검색되는 경우는 while 반복문으로 반복
 				ProductVO pv=new ProductVO();
-				pv.setP_img1(rs.getString("p_img1"));
-				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_no(rs.getInt("p_no"));
 				pv.setP_name(rs.getString("p_name"));
 				pv.setP_before_price(rs.getInt("p_before_price"));
 				pv.setP_price(rs.getInt("p_price"));
+				pv.setP_amount(rs.getInt("p_amount"));
+				pv.setP_sold(rs.getInt("p_sold"));
+				pv.setP_img1(rs.getString("p_img1"));
+				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_choice(rs.getInt("p_choice"));
+				pv.setP_class(rs.getString("p_class"));
+				pv.setP_category(rs.getString("p_category"));
+				pv.setP_date(rs.getString("p_date"));
 				
 				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
 				pv.setP_rate(rate);
@@ -283,7 +303,7 @@ public class ProductDAOImpl {
 		try {
 			
 			con=ds.getConnection();
-			sql="select p_img1,p_img2,p_name,p_before_price,p_price,p_sold from product_list "
+			sql="select * from product_list "
 					+ "where p_class=? and p_category=? ";
 			if(m.equals("new")) {
 				sql+="order by p_no desc";
@@ -304,11 +324,18 @@ public class ProductDAOImpl {
 			while(rs.next()) {
 				//복수개의 레코드가 검색되는 경우는 while 반복문으로 반복
 				ProductVO pv=new ProductVO();
-				pv.setP_img1(rs.getString("p_img1"));
-				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_no(rs.getInt("p_no"));
 				pv.setP_name(rs.getString("p_name"));
 				pv.setP_before_price(rs.getInt("p_before_price"));
 				pv.setP_price(rs.getInt("p_price"));
+				pv.setP_amount(rs.getInt("p_amount"));
+				pv.setP_sold(rs.getInt("p_sold"));
+				pv.setP_img1(rs.getString("p_img1"));
+				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_choice(rs.getInt("p_choice"));
+				pv.setP_class(rs.getString("p_class"));
+				pv.setP_category(rs.getString("p_category"));
+				pv.setP_date(rs.getString("p_date"));
 				
 				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
 				pv.setP_rate(rate);
@@ -327,5 +354,48 @@ public class ProductDAOImpl {
 		}
 		return plist;
 	}
-		
+	
+	//번호 기준 상품정보 가져오기
+	public ProductVO getProductInfo(int p_no) {
+		ProductVO pv=null;
+		try {
+			
+			con=ds.getConnection();
+			sql="select * from product_list where p_no=?";
+			pt=con.prepareStatement(sql);
+			
+			pt.setInt(1, p_no);
+			
+			rs=pt.executeQuery();
+			
+			if(rs.next()) {
+				pv=new ProductVO();
+				
+				pv.setP_no(rs.getInt("p_no"));
+				pv.setP_name(rs.getString("p_name"));
+				pv.setP_before_price(rs.getInt("p_before_price"));
+				pv.setP_price(rs.getInt("p_price"));
+				pv.setP_amount(rs.getInt("p_amount"));
+				pv.setP_sold(rs.getInt("p_sold"));
+				pv.setP_img1(rs.getString("p_img1"));
+				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_choice(rs.getInt("p_choice"));
+				pv.setP_class(rs.getString("p_class"));
+				pv.setP_category(rs.getString("p_category"));
+				pv.setP_date(rs.getString("p_date"));
+				
+			}
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				
+				if(rs != null) rs.close();
+				if(pt != null) pt.close();
+				if(con != null) con.close();
+				
+			}catch(Exception e) {e.printStackTrace();}
+		}
+		return pv;
+	}//getBoardCont()
+
 }

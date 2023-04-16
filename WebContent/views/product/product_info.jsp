@@ -1,10 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <jsp:include page="../include/header.jsp" />
 <link rel="stylesheet" type="text/css" href="./css/product_info.css">
 <script src="./js/jquery.js"></script>
 <script src="./js/product_info.js"></script>
-</head>
-<body>
 <div>
 <%-------------------------- 사이드 버튼 2 ------------------------%>
 		<span id="sidebar_02">
@@ -16,15 +16,16 @@
 		<div id="detail">
 			<div id="keyImg">
 				<div id="thum">
-					<a href="#"><img src="./images/bed/bed01.png" width="470"
-						height="470"></a>
+					<a href="#"><img src="./upload${pv.p_img1}" width="470" height="470"
+						onmouseover="this.src='./upload${pv.p_img2}'"
+						onmouseout="this.src='./upload${pv.p_img1}'"></a>
 				</div>
 			</div>
 			<div id="infoArea">
 				<table id="info_table" border="1">
 					<tr>
 						<th colspan="2"><span
-							style="font-size: 16px; color: #333333; font-weight: bold;">상품명</span>
+							style="font-size: 16px; color: #333333; font-weight: bold;">${pv.p_name}</span>
 						</th>
 					</tr>
 					<tr>
@@ -33,7 +34,7 @@
 						</th>
 						<td><span
 							style="font-size: 13px; color: #a1a1a1; font-weight: bold; text-decoration: line-through;">
-								117,000원 </span></td>
+								<fmt:formatNumber value="${pv.p_before_price}" pattern="###,###,###"/>원</span></td>
 					</tr>
 					<tr>
 						<th><span
@@ -41,7 +42,8 @@
 						</th>
 						<td><span
 							style="font-size: 13px; color: #971215; font-weight: bold;">
-								<span id="span_product_price_sale">87,700<strong>원</strong>
+								<span id="span_product_price_sale">
+							<fmt:formatNumber value="${pv.p_price}" pattern="###,###,###"/><strong>원</strong>
 							</span>
 						</span></td>
 					</tr>
@@ -75,11 +77,11 @@
 					</tr>
 					<tr>
 						<th>수량</th>
-						<td>-2-</td>
+						<td>-1-</td>
 					</tr>
 					<tr>
 						<th colspan="2"><div>
-								<h1>117,000원</h1>
+								<h1>${pv.p_price}원</h1>
 							</div></th>
 					</tr>
 				</table>
@@ -91,13 +93,12 @@
 		</div>
 		<div id="sub_info">
 			<div id="sub">
-			<p>< Size ></p>
+			<h2>- 상품 정보 -</h2>
 				<img src="./images/bed/size_info.jpg">
 			</div>
 			<div id="sub">
-			<p>< Image ></p>
-				<img src="./images/bed/bed01.png">
-				<img src="./images/bed/bed01_on.png">
+				<img src="./upload${pv.p_img1}">
+				<img src="./upload${pv.p_img2}">
 			</div>
 			<div id="sub">
 				<img src="./images/bed/delivery_info.png" width="1100">
@@ -140,20 +141,11 @@
 		<div id="contents">
 			<div class="replyArea">
 				<ul id="replybar">
-					<li>상품정보</li>
-					<li>구매안내</li>
-					<li>상품후기</li>
-					<li>상품문의</li>
-					<li>구매하기</li>
-				</ul>
-			</div>
-			<div id="replyArea">
-				<ul class="replybar">
-					<li>상품정보</li>
-					<li>구매안내</li>
-					<li>상품후기</li>
-					<li>상품문의</li>
-					<li>구매하기</li>
+					<li id="infoP_scroll">상품정보</li>
+					<li id="infoB_scroll">구매안내</li>
+					<li id="review_scroll">상품후기</li>
+					<li id="inquiry_scroll">상품문의</li>
+					<li id="buy_scroll">구매하기</li>
 				</ul>
 			</div>
 			<div class="clear"></div>
