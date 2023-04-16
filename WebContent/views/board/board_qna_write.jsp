@@ -8,13 +8,13 @@
 	<label class="write-info-text">Q&A 게시글을 작성하는 공간입니다.</label>
 	<hr>
 </div>
-<form name="b" method="post" action="board_qna_write-ok_net">
+<form name="b" method="post" action="qna_write_ok.net">
 	<div class="board-write-area">
 		
 			<table>
 				<tr>
 					<th>글쓴이</th>
-					<td><label>da</label></td>
+					<td><label>${id}</label></td>
 				</tr>
 				<tr>
 					<th>제목</th>
@@ -22,7 +22,7 @@
 				</tr>
 				<tr>
 					<th>글내용</th>
-					<td><textarea></textarea></td>
+					<td><textarea id="board_cont" name="board_cont"></textarea></td>
 				</tr>
 			</table>
 		
