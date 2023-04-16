@@ -53,8 +53,13 @@
 	padding:20px;
 	text-align:left;
 }
+.board-write-area table td input{
+	width:800px; height:30px;
+	font-size:20px;
+}
 .board-write-area table td textarea{
 	width:800px; height:280px;
+	font-size:20px;
 	resize:none;
 }
 .write-button-area{
