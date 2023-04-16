@@ -103,7 +103,7 @@
     </tbody>
     </table>
     <input type="submit" id="edit-submit" value="회원정보수정">
-    <input type="reset" id="edit-reset" value="수정취소" onclick="$('#m_pwd').focus();">
+    <input type="reset" id="edit-reset" value="수정취소">
     <input type="button" id="del-button" value="회원탈퇴" onclick="open_delwindow();">
    </div>
   </form>

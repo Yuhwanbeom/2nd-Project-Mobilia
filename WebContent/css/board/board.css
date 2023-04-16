@@ -1,0 +1,38 @@
+@charset "UTF-8";
+.title-area{
+	float:center;
+	text-align:center;
+}
+.info-text{
+	color:gray;
+	margin-left:150px;
+}
+@keyframes fadeInDown{ 
+	0% {
+	opacity: 0;
+	transform: translate3d(0, -100%, 0);
+	}
+
+	to {
+	opacity: 1;
+	transform: translateZ(0);
+	}
+
+}
+.title-area h2{
+	margin-top: 80px;
+	position:relative;
+	animation:fadeInDown 1s;
+}
+#write-button{
+	float:right;
+	width:120px; height:30px;
+	margin-right:30px;
+	border:none;
+	background-color:black; color:white;
+	font-weight:bold; font-size:14px;
+}
+#write-button:hover{
+	cursor:pointer;
+	background-color:gray;
+}
