@@ -85,7 +85,7 @@
 							<input type='button' id="amount_minus" class="a_btn"onclick='count("minus");' value="-"/>
 							<input type="text" id="amount_count" size="1"  value="1" readonly>
 							<input type='button' id="amount_plus" class="a_btn" onclick='count("plus");' value="+"/>
-							<span id="amount_info">(최대 : <span id="p_amount"><b>${pv.p_amount}</b></span>개)</span>
+							<span id="amount_info">(최대 : <b><span id="p_amount">${pv.p_amount}</span></b>개)</span>
 						</td>
 					</tr>
 					<tr>
