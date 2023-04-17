@@ -59,7 +59,7 @@ public class QnaBoardDAOImpl {
 
 	public int getListCount(QnaBoardVO findqna) {
 		int count = 0;
-		
+
 		try {
 			con = ds.getConnection();
 			sql ="select count(board_no) from qna_board";
@@ -72,15 +72,15 @@ public class QnaBoardDAOImpl {
 			}else if(findqna.getFind_field().equals("board_cont")) {
 				sql+=" where board_cont like ? ";
 			}
-			
+
 			pt = con.prepareStatement(sql);
-			
+
 			if(findqna.getFind_field() != null) {
 				pt.setString(1, findqna.getFind_name());
 			}
-			
+
 			rs = pt.executeQuery();
-			
+
 			if(rs.next()) {
 				count  = rs.getInt(1);
 			}
@@ -94,7 +94,7 @@ public class QnaBoardDAOImpl {
 		}//finally
 		return count;
 	}
-	
+
 	public List<QnaBoardVO> getBoardData(int page, int maxview, QnaBoardVO findqna) {//보드 리스트 가져오기
 		List<QnaBoardVO> qlist = new ArrayList<>();
 
@@ -112,12 +112,12 @@ public class QnaBoardDAOImpl {
 				sql+=" where board_cont like ?";
 			}
 			sql+=" order by board_no desc)) where rNum>=? and rNum<=?";
-			
+
 			pt = con.prepareStatement(sql);
 
 			int startrow=(page-1)*10+1; //읽기 시작할 행번호. 10은 한페이지 에서 보여지는 목록 개수
 			int endrow = startrow+maxview-1;//읽을 마지막 행번호
-			
+
 			if(findqna.getFind_field() != null) {//사용자가 검색을 한 경우
 				pt.setString(1, findqna.getFind_name());
 				pt.setInt(2, startrow);
@@ -126,7 +126,7 @@ public class QnaBoardDAOImpl {
 				pt.setInt(1, startrow);
 				pt.setInt(2, endrow);
 			}
-			
+
 			rs = pt.executeQuery();
 
 			while(rs.next()) {
@@ -137,7 +137,7 @@ public class QnaBoardDAOImpl {
 				qvo.setBoard_hit(rs.getInt("board_hit"));
 				qvo.setReply_hit(rs.getInt("reply_hit"));
 				qvo.setBoard_date(rs.getString("board_date"));
-				
+
 				qlist.add(qvo);
 			}
 		}catch(Exception e) {e.printStackTrace();}
@@ -149,6 +149,55 @@ public class QnaBoardDAOImpl {
 			}catch(Exception e) {e.printStackTrace();}
 		}
 		return qlist;
+	}
+
+
+	public void updatetHit(int board_no) {
+
+		try {
+			con=ds.getConnection();
+			sql="update qna_board set board_hit=board_hit+1 where board_no=?";
+			pt=con.prepareStatement(sql);
+			pt.setInt(1,board_no);
+			pt.executeUpdate();
+
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {				
+				if(pt != null) pt.close();
+				if(con != null) con.close();				
+			}catch(Exception e) {e.printStackTrace();}
+		}
+	}
+
+
+	public QnaBoardVO getBoardCont(int board_no) {
+		QnaBoardVO qvo=null;
+
+		try {
+			con=ds.getConnection();
+			sql="select * from qna_board where board_no=?";
+			pt=con.prepareStatement(sql);
+			pt.setInt(1,board_no);
+			rs=pt.executeQuery();
+
+			if(rs.next()) {
+				qvo = new QnaBoardVO();
+				qvo.setBoard_no(rs.getInt("board_no"));
+				qvo.setBoard_name(rs.getString("board_name"));
+				qvo.setBoard_title(rs.getString("board_title"));
+				qvo.setBoard_cont(rs.getString("board_cont"));
+				qvo.setBoard_hit(rs.getInt("board_hit"));
+			}
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				if(rs != null) rs.close();
+				if(pt != null) pt.close();
+				if(con != null) con.close();				
+			}catch(Exception e) {e.printStackTrace();}
+		}
+		return qvo;
 	}
 
 }
