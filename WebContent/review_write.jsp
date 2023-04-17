@@ -136,7 +136,7 @@
 			</div>
 			<div>
 				<input id="reviewBtn" type="submit" value="등록" onclick="review_wirte_ok.net">
-				<input id="cancelBtn" type="button" value="취소" onclick="">
+				<input id="cancelBtn" type="button" value="취소" onclick="self.close();">
 			</div>
 		</div>
 	</form>
