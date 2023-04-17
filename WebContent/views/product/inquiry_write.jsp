@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="reviewArea">
-	<form action="review_write_ok.daum" method="post" name="reviewform">
+	<form action="inquiry_write_ok.net?p_no=${pv.p_no}" method="post" name="reviewform">
 		<h2>상품 문의 작성</h2>
 
 		<div id="reviewArea">
@@ -29,7 +29,7 @@
 				<textarea rows="15" cols="40" placeholder="후기를 입력하세요."></textarea>
 			</div>
 			<div>
-				<input id="reviewBtn" type="submit" value="등록" onclick="inquiry_wirte_ok.net">
+				<input id="reviewBtn" type="submit" value="등록" >
 				<input id="cancelBtn" type="button" value="취소" onclick="self.close();">
 			</div>
 		</div>
