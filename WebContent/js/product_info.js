@@ -85,7 +85,6 @@ function inquiry_check(){
 function count(type)  { //버튼 숫자 증가
 	var count = $('#amount_count').val();
 	var amount = parseInt($("#p_amount").html());
-	var result=1000;
 	if(type === 'plus') {
 		if(count >= amount){
 			alert('최대 수량입니다!');
