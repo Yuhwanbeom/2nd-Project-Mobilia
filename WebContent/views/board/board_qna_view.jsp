@@ -5,7 +5,7 @@
 <div id="board-wrap">
 <div class="title-area">
 	<h2>Community</h2>
-	<label class="write-info-text">Community 게시글을 확인하는 공간입니다.</label>
+	<label class="write-info-text">Community 게시글 내용을 볼수있는 공간입니다.</label>
 	<hr>
 </div>
 <form name="b" method="post" action="qna_write_ok.net">
