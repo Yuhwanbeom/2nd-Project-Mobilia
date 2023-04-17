@@ -8,6 +8,8 @@ public class LoginController implements Action {
 	@Override
 	public ActionForward excute(HttpServletRequest request, 
 			HttpServletResponse response) throws Exception {
+		response.setContentType("text/html;charset=UTF-8");
+		
 		
 		ActionForward forward=new ActionForward();
 		forward.setRedirect(false);

@@ -48,8 +48,8 @@ public class QnaWriteOKController implements Action {
 			}else {
 				
 				ActionForward forward=new ActionForward();
-				forward.setRedirect(false);
-				forward.setPath("./views/board/board_qna.jsp");
+				forward.setRedirect(true);
+				forward.setPath("qna.net");
 				return forward;
 			}
 		}
