@@ -7,7 +7,17 @@ public class QnaBoardVO {
 	private String board_title;
 	private String board_cont;
 	private int board_hit;
-	private int board_date;
+	private int reply_hit;
+	private String board_date;
+	
+	//페이징 관련변수
+	private int startrow;//시작 번호
+	private int endrow;//끝 번호
+	
+	//검색 기능 관련변수
+	private String find_field; //검색필드
+	private String find_name; //검색어
+	
 	
 	public int getBoard_no() {
 		return board_no;
@@ -39,11 +49,41 @@ public class QnaBoardVO {
 	public void setBoard_hit(int board_hit) {
 		this.board_hit = board_hit;
 	}
-	public int getBoard_date() {
-		return board_date;
+	public int getReply_hit() {
+		return reply_hit;
 	}
-	public void setBoard_date(int board_date) {
+	public void setReply_hit(int reply_hit) {
+		this.reply_hit = reply_hit;
+	}
+	public String getBoard_date() {
+		return board_date.substring(0, 10);
+	}
+	public void setBoard_date(String board_date) {
 		this.board_date = board_date;
 	}
 	
+	public int getStartrow() {
+		return startrow;
+	}
+	public void setStartrow(int startrow) {
+		this.startrow = startrow;
+	}
+	public int getEndrow() {
+		return endrow;
+	}
+	public void setEndrow(int endrow) {
+		this.endrow = endrow;
+	}
+	public String getFind_field() {
+		return find_field;
+	}
+	public void setFind_field(String find_field) {
+		this.find_field = find_field;
+	}
+	public String getFind_name() {
+		return find_name;
+	}
+	public void setFind_name(String fine_name) {
+		this.find_name = fine_name;
+	}
 }
