@@ -39,8 +39,8 @@ public class ProductDAOImpl {
 			
 			if(p.getP_choice() == 1) {
 				sql="insert into product_list(p_no,p_name,p_before_price,p_price,p_amount,p_img1,p_img2"
-						+ ",p_choice,p_class,p_category,p_date)"
-						+ "values(product_no_seq.nextval,?,?,?,?,?,?,?,?,?,sysdate)";
+						+ ",p_choice,p_class,p_category,p_info,p_color,p_size,p_date) "
+						+ "values(product_no_seq.nextval,?,?,?,?,?,?,?,?,?,?,?,?,sysdate)";
 					pt=con.prepareStatement(sql);
 				
 					pt.setString(1, p.getP_name());
@@ -52,10 +52,13 @@ public class ProductDAOImpl {
 					pt.setInt(7, p.getP_choice());
 					pt.setString(8, p.getP_class());
 					pt.setString(9, p.getP_category());
+					pt.setString(10, p.getP_info());
+					pt.setString(11, p.getP_color());
+					pt.setString(12, p.getP_size());
 			}else {
 					sql="insert into product_list(p_no,p_name,p_before_price,p_price,p_amount,p_img1,p_img2"
-						+ ",p_class,p_category,p_date)"
-						+ "values(product_no_seq.nextval,?,?,?,?,?,?,?,?,sysdate)";
+						+ ",p_class,p_category,p_info,p_color,p_size,p_date) "
+						+ "values(product_no_seq.nextval,?,?,?,?,?,?,?,?,?,?,?,sysdate)";
 					pt=con.prepareStatement(sql);
 				
 					pt.setString(1, p.getP_name());
@@ -66,6 +69,9 @@ public class ProductDAOImpl {
 					pt.setString(6, p.getP_img2());
 					pt.setString(7, p.getP_class());
 					pt.setString(8, p.getP_category());
+					pt.setString(9, p.getP_info());
+					pt.setString(10, p.getP_color());
+					pt.setString(11, p.getP_size());
 			}
 			
 			re=pt.executeUpdate();
@@ -170,6 +176,9 @@ public class ProductDAOImpl {
 				pv.setP_class(rs.getString("p_class"));
 				pv.setP_category(rs.getString("p_category"));
 				pv.setP_date(rs.getString("p_date"));
+				pv.setP_info(rs.getString("p_info"));
+				pv.setP_color(rs.getString("p_color"));
+				pv.setP_size(rs.getString("p_size"));
 				
 				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
 				pv.setP_rate(rate);
@@ -219,6 +228,9 @@ public class ProductDAOImpl {
 				pv.setP_class(rs.getString("p_class"));
 				pv.setP_category(rs.getString("p_category"));
 				pv.setP_date(rs.getString("p_date"));
+				pv.setP_info(rs.getString("p_info"));
+				pv.setP_color(rs.getString("p_color"));
+				pv.setP_size(rs.getString("p_size"));
 				
 				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
 				pv.setP_rate(rate);
@@ -245,8 +257,7 @@ public class ProductDAOImpl {
 		try {
 			
 			con=ds.getConnection();
-			sql="select * from product_list "
-					+ "where p_class=? ";
+			sql="select * from product_list where p_class=? ";
 			if(m.equals("new")) {
 				sql+="order by p_no desc";
 			}else if(m.equals("low")) {
@@ -277,6 +288,9 @@ public class ProductDAOImpl {
 				pv.setP_class(rs.getString("p_class"));
 				pv.setP_category(rs.getString("p_category"));
 				pv.setP_date(rs.getString("p_date"));
+				pv.setP_info(rs.getString("p_info"));
+				pv.setP_color(rs.getString("p_color"));
+				pv.setP_size(rs.getString("p_size"));
 				
 				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
 				pv.setP_rate(rate);
@@ -336,6 +350,9 @@ public class ProductDAOImpl {
 				pv.setP_class(rs.getString("p_class"));
 				pv.setP_category(rs.getString("p_category"));
 				pv.setP_date(rs.getString("p_date"));
+				pv.setP_info(rs.getString("p_info"));
+				pv.setP_color(rs.getString("p_color"));
+				pv.setP_size(rs.getString("p_size"));
 				
 				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
 				pv.setP_rate(rate);
@@ -383,7 +400,9 @@ public class ProductDAOImpl {
 				pv.setP_class(rs.getString("p_class"));
 				pv.setP_category(rs.getString("p_category"));
 				pv.setP_date(rs.getString("p_date"));
-				
+				pv.setP_info(rs.getString("p_info"));
+				pv.setP_color(rs.getString("p_color"));
+				pv.setP_size(rs.getString("p_size"));
 			}
 		}catch(Exception e) {e.printStackTrace();}
 		finally {

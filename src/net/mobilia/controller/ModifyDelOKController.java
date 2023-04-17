@@ -51,7 +51,6 @@ public class ModifyDelOKController implements Action {
 				out.println("opener.parent.location.reload();");//공지창을 부른 부모창을 새로고침함
 				out.println("window.close();");//공지창 닫음
 				out.println("</script>");
-				
 			}
 		}
 		return null;

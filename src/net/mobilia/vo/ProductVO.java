@@ -13,8 +13,13 @@ public class ProductVO {
 	private String p_class;
 	private String p_category;
 	private String p_date;
+	private String p_info;
+	private String p_color;
+	private String p_size;
+	
 	
 	private int p_rate; //할인률
+	
 	
 	public int getP_no() {
 		return p_no;
@@ -87,6 +92,24 @@ public class ProductVO {
 	}
 	public void setP_date(String p_date) {
 		this.p_date = p_date.substring(0, 10);
+	}
+	public String getP_info() {
+		return p_info;
+	}
+	public void setP_info(String p_info) {
+		this.p_info = p_info;
+	}
+	public String getP_color() {
+		return p_color;
+	}
+	public void setP_color(String p_color) {
+		this.p_color = p_color;
+	}
+	public String getP_size() {
+		return p_size;
+	}
+	public void setP_size(String p_size) {
+		this.p_size = p_size;
 	}
 	public int getP_rate() {
 		return p_rate;
