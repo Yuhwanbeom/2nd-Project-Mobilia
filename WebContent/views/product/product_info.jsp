@@ -55,8 +55,7 @@
 						<th><span style="font-size: 15px; color: #333333;">상품설명</span>
 						</th>
 						<td><span style="font-size: 13px; color: #333333;">
-								Dimension : W740 xD900 x H870 (SH420) mm<br> Material :
-								인조라탄(PE) + 스틸<br> Country of origin : CHINA OEM<br>
+								${p_info}<br>
 						</span></td>
 					</tr>
 					<tr>
@@ -64,9 +63,9 @@
 						<td><select name="p_color" id="p_color">
 								<option>- [필수] 옵션을 선택해 주세요 -</option>
 								<option>-------------------</option>
-								<option value="블랙">블랙</option>
-								<option value="내추럴">내추럴</option>
-								<option value="화이트">화이트</option>
+								<c:forEach var="color" items="${colorList}">
+       								<option value="${color}">${color}</option>
+        						</c:forEach>
 						</select>
 					</tr>
 					<tr>
@@ -74,9 +73,9 @@
 						<td><select name="p_color" id="p_color">
 								<option>- [필수] 옵션을 선택해 주세요 -</option>
 								<option>-------------------</option>
-								<option value="블랙">1200mm x 600mm</option>
-								<option value="내추럴">1200mm x 600mm</option>
-								<option value="화이트">1200mm x 600mm</option>
+								<c:forEach var="size" items="${sizeList}">
+       								<option value="${size}">${size}</option>
+        						</c:forEach>
 						</select>
 					</tr>
 					<tr>
@@ -172,7 +171,13 @@
 				</div>
 				<div id="review">
 					<ul>
-						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
+						<li id="p_img1"><img src="./upload${pv.p_img1}" width="50" height="50" id="re_img">
+							<img src="./images/product/star1.png" width="13">
+							<img src="./images/product/star1.png" width="13">
+							<img src="./images/product/star1.png" width="13">
+							<img src="./images/product/star1.png" width="13">
+							<img src="./images/product/star0.png" width="13">
+						</li>
 						<li id="m_id"><span>kuil**** | 2023-04-14</span>
 						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
 					</ul>

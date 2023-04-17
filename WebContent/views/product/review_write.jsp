@@ -118,17 +118,17 @@
 		<div id="starText">별점을 선택해주세요.</div>
 		<div style="clear:both;"></div>
 		<div id="reviewArea">
-			<div id="pr_info">
-				<div><img src="./images/bed/bed01.png" 
+			<div id="pr_info2">
+				<div><img src="./upload${pv.p_img1}" 
 					style="width:100px;height:auto;"></div>
-				<span id="pr_name">싱글침대01</span>
+				<span id="pr_name2">${pv.p_name}</span>
 			</div>
 			<div style="clear:both;"></div>
 		</div>
 		<div id="reviewArea">
 			<table id="reviewTable">
 				<tr>
-					<th>아이디</th><td>kuilcake</td>
+					<th>아이디</th><td>${id}</td>
 				</tr>
 			</table>
 			<div>
