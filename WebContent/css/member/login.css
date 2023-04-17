@@ -1,11 +1,5 @@
 @charset "UTF-8";
 
-/* 기본 설정: 페이지 전체 */
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .login_containers {
     display: block;
     margin: 100px auto;

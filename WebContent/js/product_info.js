@@ -48,13 +48,21 @@ $(document).ready(function(){
 		var offset = $('#thum').offset(); //선택한 태그의 위치를 반환
         $('html').animate({scrollTop : offset.top-110}, 800);
 	});
+	
+	$('.a_btn').click(function(){
+		var count = parseInt($('#amount_count').val());
+		var p_price =parseInt($('#p_price').val());
+		var result = count * p_price;
+		result = result.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+		$('#result_price').html("<h1>"+result+"원</h1>");
+	})
 });
 
 function review_check(){
     var _width = '400';
     var _height = '600';
- 
-	var url="review_write.net";//매핑주소
+	var p_no = $('#p_no').val();
+	var url="review_write.net?p_no="+p_no;//매핑주소
     // 팝업을 가운데 위치시키기 위해 아래와 같이 값 구하기
     var _left = Math.ceil(( window.screen.width - _width )/2);
     var _top = Math.ceil(( window.screen.height - _height )/2)-50; 
@@ -65,8 +73,8 @@ function review_check(){
 function inquiry_check(){
     var _width = '400';
     var _height = '600';
- 
-	var url="inquiry_write.net";//매핑주소
+ 	var p_no = $('#p_no').val();
+	var url="inquiry_write.net?p_no="+p_no;//매핑주소
     // 팝업을 가운데 위치시키기 위해 아래와 같이 값 구하기
     var _left = Math.ceil(( window.screen.width - _width )/2);
     var _top = Math.ceil(( window.screen.height - _height )/2); 
@@ -74,4 +82,20 @@ function inquiry_check(){
     window.open(url,'사용후기작성','width='+_width+',height='+_height 
     		+', left='+ _left+',top='+_top);
 }
-	
+function count(type)  { //버튼 숫자 증가
+	var count = $('#amount_count').val();
+	var amount = parseInt($("#p_amount").html());
+	if(type === 'plus') {
+		if(count >= amount){
+			alert('최대 수량입니다!');
+			return false;
+		}
+		count = parseInt(count) + 1;
+	}else if(type === 'minus')  {
+		if(count <= 1){
+			return false;
+		}
+    	count = parseInt(count) - 1;
+	}
+	$('#amount_count').val(count);
+}
