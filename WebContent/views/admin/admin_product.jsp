@@ -39,7 +39,7 @@ $(document).ready(function(){
 		$("#demo").empty();
 		for (var i = 0; i < cnt; i++) {
 
-			 var $txtbox ='<input id="p_color" name="p_color'+i+'" size="8">'
+			 var $txtbox ='<input id="p_color" name="p_color'+i+'" size="8"placeholder="색상 '+(i+1)+'"><br>'
 			$("#demo").append($txtbox);
 		}
 	});
@@ -48,7 +48,7 @@ $(document).ready(function(){
 		
 		$("#demo1").empty();
 		for (var i = 0; i < cnt; i++) {
-			 var $txtbox = '<input id="p_size" name="p_size'+i+'" size="14">'
+			 var $txtbox = '<input id="p_size" name="p_size'+i+'" size="24" placeholder="사이즈 '+(i+1)+'"><br>'
 			$("#demo1").append($txtbox);
 		}
 	});
