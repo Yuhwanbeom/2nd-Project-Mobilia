@@ -12,21 +12,22 @@ create table product_list(
 	,p_class varchar2(30) not null	--상위 카테고리 (ex: Bed)
 	,p_category varchar2(30) not null--하위 카테고리 (ex: Single)
 	,p_date date					--상품 등록 날짜
+	,p_info varchar2(4000) not null --상품 정보
+	,p_color varchar2(1000) not null--상품 색
+	,p_size varchar2(2000) not null --상품 사이즈
 );
-select * from PRODUCT_list;
-
-delete product_list;
-commit;
-
-update product_list set p_category='super single' where p_category='super_single';
-
-drop table product_list;
-
-insert into product_list values(1,'2',1,1,1,1,'2','2',1,'2','1',sysdate);
 
 create sequence product_no_seq
 start with 1 -- 1부터 시작
 increment by 1 --1씩 증가
 nocache; --임시 메모리 사용하지 않겠다는 뜻
+
+----------------------------------------------------------------------------------
+
+select * from PRODUCT_list;
+
+delete product_list;
+
+drop table product_list;
 
 drop sequence product_no_seq;

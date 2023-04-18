@@ -5,7 +5,7 @@
 <div id="board-wrap">
 <div class="title-area">
 	<h2>Community</h2>
-	<label class="write-info-text">Community 게시글을 작성하는 공간입니다.</label>
+	<label class="write-info-text">Community 게시글 내용을 볼수있는 공간입니다.</label>
 	<hr>
 </div>
 <form name="b" method="post" action="qna_write_ok.net">
@@ -14,23 +14,19 @@
 			<table>
 				<tr>
 					<th>글쓴이</th>
-					<td><label>${id}</label></td>
+					<td><label>${qvo.board_name}</label></td>
 				</tr>
 				<tr>
 					<th>제목</th>
-					<td><input id="board_title" name="board_title"></td>
+					<td><label>${qvo.board_title}</label></td>
 				</tr>
 				<tr>
 					<th>글내용</th>
-					<td><textarea id="board_cont" name="board_cont"></textarea></td>
+					<td><label>${board_cont}</label></td>
 				</tr>
 			</table>
-		
 	</div>
-	<div class="write-button-area">
-	 <input type=submit id="write-submit-button" value="게시글등록">
-	 <input type="reset" id="write-list-button" value="게시글목록" onclick="location='qna.net';">
-	</div>
+	
 </form>
 </div>
 <jsp:include page="../include/footer.jsp" />

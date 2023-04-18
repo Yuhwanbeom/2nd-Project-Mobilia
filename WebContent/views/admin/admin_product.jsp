@@ -31,6 +31,28 @@ function categoryChange(e) {
 		target.appendChild(opt);
 	}	
 }
+
+$(document).ready(function(){
+	$("#color_count").change(function(event) {
+		var cnt = $(this).val();
+		
+		$("#demo").empty();
+		for (var i = 0; i < cnt; i++) {
+
+			 var $txtbox ='<input id="p_color" name="p_color'+i+'" size="8"placeholder="색상 '+(i+1)+'"><br>'
+			$("#demo").append($txtbox);
+		}
+	});
+	$("#size_count").change(function(event) {
+		var cnt = $(this).val();
+		
+		$("#demo1").empty();
+		for (var i = 0; i < cnt; i++) {
+			 var $txtbox = '<input id="p_size" name="p_size'+i+'" size="24" placeholder="사이즈 '+(i+1)+'"><br>'
+			$("#demo1").append($txtbox);
+		}
+	});
+});
 </script>
 </head>
 <body>
@@ -91,12 +113,54 @@ function categoryChange(e) {
 							<option value="chair">Chair</option>
 							<option value="cabinet">Cabinet</option>
 						</select>
-					</tr>
+				</tr>
 				<tr>	
 					<th>카테고리</th>
 					<td>
 						<select name="p_category" id="p_category">
 						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>상품설명</th>
+					<td><textarea rows="4" cols="34" id="p_info" name="p_info"></textarea></td>
+				</tr>
+				<tr>
+					<th>색상</th>
+					<td>
+					<select name="color_count" id="color_count">
+						<option>선택</option>
+						<option value="1">1개</option>
+						<option value="2">2개</option>
+						<option value="3">3개</option>
+						<option value="4">4개</option>
+						<option value="5">5개</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<th>색상 입력</th>
+					<td><div id="demo"></div>
+					<input type="hidden" name="p_color" id="p_color">
+					</td>
+				</tr>
+				<tr>
+					<th>사이즈</th>
+					<td>
+					<select name="size_count" id="size_count">
+						<option>선택</option>
+						<option value="1">1개</option>
+						<option value="2">2개</option>
+						<option value="3">3개</option>
+						<option value="4">4개</option>
+						<option value="5">5개</option>
+					</select>
+					</td>
+				</tr>
+				<tr>
+					<th>사이즈 입력</th>
+					<td><div id="demo1"></div>
+					<input type="hidden" value="" name="p_size" id="p_size">
 					</td>
 				</tr>
 			</table>
