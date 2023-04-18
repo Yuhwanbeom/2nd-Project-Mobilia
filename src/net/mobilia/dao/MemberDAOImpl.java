@@ -223,5 +223,7 @@ public class MemberDAOImpl {
 			}catch(Exception e) {e.printStackTrace();}
 		}
 	}
-
+	
+	
+	
 }
