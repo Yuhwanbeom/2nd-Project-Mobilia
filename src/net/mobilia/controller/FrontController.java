@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 public class FrontController  extends HttpServlet {
 
 	@Override
-	protected void service(HttpServletRequest request, HttpServletResponse response) 
+	protected void service(HttpServletRequest request,
+			HttpServletResponse response) 
 			throws ServletException, IOException {
 		
 		String requestUri = request.getRequestURI(); // /MVC/*.daum 경로를 구함.
