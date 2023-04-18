@@ -42,7 +42,31 @@ public class AdminProductOKController implements Action {
 		File upFile2=multi.getFile("p_img2");
 		String p_class=multi.getParameter("p_class");
 		String p_category=multi.getParameter("p_category");
+		String p_info=multi.getParameter("p_info");
 		
+		int color_count=Integer.parseInt(multi.getParameter("color_count"));
+		int size_count=Integer.parseInt(multi.getParameter("size_count"));
+		
+		String p_color =multi.getParameter("p_color0");
+		p.setP_color(p_color);
+		if(multi.getParameter("p_color1") != null) {
+			for(int i=1;i<color_count;i++) {
+				if(multi.getParameter("p_color"+i)!= null) {
+					p_color+=","+multi.getParameter("p_color"+i);
+				}
+				p.setP_color(p_color);
+			}
+		}
+		String p_size=multi.getParameter("p_size0");
+		p.setP_size(p_size);
+		if(multi.getParameter("p_size1") != null) {
+			for(int i=1;i<size_count;i++) {
+				if(multi.getParameter("p_size"+i) != null) {
+					p_size=p_size+","+multi.getParameter("p_size"+i);
+				}
+				p.setP_size(p_size);
+			}
+		}
 		if(multi.getParameter("p_choice") != null) {
 			int p_choice=Integer.parseInt(multi.getParameter("p_choice"));
 			 p.setP_choice(p_choice);
@@ -97,7 +121,8 @@ public class AdminProductOKController implements Action {
 		}
 		p.setP_name(p_name); p.setP_price(p_price); p.setP_before_price(p_before_price);
 		p.setP_amount(p_amount);
-		p.setP_class(p_class); p.setP_category(p_category);
+		p.setP_class(p_class); p.setP_category(p_category); 
+		p.setP_info(p_info);
 		ProductDAOImpl pdao=new ProductDAOImpl();
 		
 		int re=pdao.insertProduct(p);//상품 저장

@@ -78,13 +78,13 @@
 	}
 	function mark(star){
 		lock(star);
-		document.reviewform.star.value=star;
+		document.reviewform.re_star.value=star;
 	}
 </script>
 </head>
 <body>
 <div id="reviewArea">
-	<form action="review_write_ok.daum" method="post" name="reviewform">
+	<form action="review_write_ok.net?p_no=${pv.p_no}" method="post" name="reviewform">
 		<h2>상품 후기 작성</h2>
 		<div>
 			<table id="starTable">
@@ -110,7 +110,7 @@
 									width="20">
 							</span>
 						</div>
-						<input type="hidden" name="star">
+						<input type="hidden" name="re_star">
 					</td>
 				</tr>
 			</table>
@@ -118,24 +118,27 @@
 		<div id="starText">별점을 선택해주세요.</div>
 		<div style="clear:both;"></div>
 		<div id="reviewArea">
-			<div id="pr_info">
-				<div><img src="./images/bed/bed01.png" 
-					style="width:100px;height:auto;"></div>
-				<span id="pr_name">싱글침대01</span>
+			<div id="pr_info2">
+				<div><img src="./upload${pv.p_img1}" 
+					style="width:100px;height:auto;">
+					<input type="hidden" value="${pv.p_img1}" name="p_img1"></div>
+				<span id="pr_name2">${pv.p_name}
+				<input type="hidden" value="${pv.p_name}" name="p_name">
+				</span>
 			</div>
 			<div style="clear:both;"></div>
 		</div>
 		<div id="reviewArea">
 			<table id="reviewTable">
 				<tr>
-					<th>아이디</th><td>kuilcake</td>
+					<th>아이디</th><td>${id}</td>
 				</tr>
 			</table>
 			<div>
-				<textarea rows="15" cols="40" placeholder="후기를 입력하세요."></textarea>
+				<textarea name="re_cont" rows="15" cols="40" placeholder="후기를 입력하세요."></textarea>
 			</div>
 			<div>
-				<input id="reviewBtn" type="submit" value="등록" onclick="review_wirte_ok.net">
+				<input id="reviewBtn" type="submit" value="등록">
 				<input id="cancelBtn" type="button" value="취소" onclick="self.close();">
 			</div>
 		</div>
