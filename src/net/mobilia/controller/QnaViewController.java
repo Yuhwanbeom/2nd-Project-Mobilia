@@ -2,6 +2,7 @@ package net.mobilia.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import net.mobilia.dao.QnaBoardDAOImpl;
 import net.mobilia.vo.QnaBoardVO;
@@ -11,6 +12,11 @@ public class QnaViewController implements Action {
 	@Override
 	public ActionForward excute(HttpServletRequest request, 
 			HttpServletResponse response) throws Exception {
+		
+		response.setContentType("text/html;charset=UTF-8");
+		HttpSession session=request.getSession();
+
+		String id=(String)session.getAttribute("id");
 
 		int board_no = Integer.parseInt(request.getParameter("board_no"));
 		int page = 1;
@@ -31,6 +37,7 @@ public class QnaViewController implements Action {
 		request.setAttribute("qvo", qvo);
 		request.setAttribute("board_cont", board_cont);
 		request.setAttribute("page", page);
+		request.setAttribute("id", id);
 		
 		ActionForward forward=new ActionForward();
 		forward.setRedirect(false);

@@ -200,4 +200,23 @@ public class QnaBoardDAOImpl {
 		return qvo;
 	}
 
+
+	public void delBoard(int board_no) {
+		
+		try {
+			con=ds.getConnection();
+			sql="delete qna_board where board_no=?";
+			pt=con.prepareStatement(sql);
+			pt.setInt(1,board_no);
+			pt.executeUpdate();
+					
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				if(pt != null) pt.close();
+				if(con != null) con.close();
+			}catch(Exception e) {e.printStackTrace();}
+		}
+	}
+
 }

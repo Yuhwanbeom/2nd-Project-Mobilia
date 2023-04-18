@@ -2,15 +2,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="../include/header.jsp" />
 <link rel="stylesheet" type="text/css" href="./css/board/board_write.css">
+<link rel="stylesheet" type="text/css" href="./css/board/board_view.css">
 <div id="board-wrap">
 <div class="title-area">
 	<h2>Community</h2>
 	<label class="write-info-text">Community 게시글 내용을 볼수있는 공간입니다.</label>
 	<hr>
 </div>
-<form name="b" method="post" action="qna_write_ok.net">
+<div class="board-state-button-area">
+<c:if test="${qvo.board_name == id}">
+ <span id="state-left">
+  <input type="button" value="수정" onclick="location='qna_view.net?board_no=${qvo.board_no}&
+  page=${page}&state=edit';"/>
+  <input type="button" value="삭제" onclick="location='qna_view.net?board_no=${qvo.board_no}&
+  page=${page}&state=del';"/>
+ </span>
+</c:if>
+ <span id="state-right">
+  <input type="button" value="목록" onclick="location='qna.net?page=${page}';"/>
+ </span>
+</div>
 	<div class="board-write-area">
-		
 			<table>
 				<tr>
 					<th>글쓴이</th>
@@ -26,7 +38,5 @@
 				</tr>
 			</table>
 	</div>
-	
-</form>
 </div>
 <jsp:include page="../include/footer.jsp" />
