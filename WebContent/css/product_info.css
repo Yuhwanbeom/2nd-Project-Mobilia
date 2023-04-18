@@ -327,3 +327,19 @@ select{
 #re_img{
 	margin-right: 8px;
 }
+#re_edit{
+	text-decoration: underline;
+	font-size:12px;
+	color:#333;
+}
+#re_edit:hover{
+	color:#39d9c8;
+}
+#re_del{
+	text-decoration: underline;
+	font-size:12px;
+	color:#333;
+}
+#re_del:hover{
+	color:#39d9c8;
+}
