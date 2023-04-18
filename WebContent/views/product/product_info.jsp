@@ -175,11 +175,16 @@
 						<ul>	
 							<li id="p_img1">
 								<img src="./upload${r.p_img1}" width="50" height="50" id="re_img">
-								<img src="./images/product/star1.png" width="13">
-								<img src="./images/product/star1.png" width="13">
-								<img src="./images/product/star1.png" width="13">
-								<img src="./images/product/star1.png" width="13">
-								<img src="./images/product/star0.png" width="13">
+								<c:forEach begin="1" end="${r.re_star}" step="1">
+									<img src="./images/product/star1.png" width="13">
+								</c:forEach>
+								<c:forEach begin="1" end="${5 - r.re_star}">
+									<img src="./images/product/star0.png" width="13">
+								</c:forEach>
+								<c:if test="${id == r.m_id}">
+									<a href="#" id="re_edit">수정</a>
+									<a href="#" id="re_del">삭제</a>
+								</c:if>
 							</li>
 							<li id="m_id"><span>${r.p_name} | ${r.re_date}</span>
 							<li id="m_review"><span>${r.re_cont}</span>
