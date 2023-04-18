@@ -11,6 +11,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import net.mobilia.vo.ProductVO;
+import net.mobilia.vo.QnaBoardVO;
 
 public class ProductDAOImpl {
 	DataSource ds=null;//커넥션 풀 관리 ds
@@ -416,5 +417,45 @@ public class ProductDAOImpl {
 		}
 		return pv;
 	}//getBoardCont()
+
+	public List<ProductVO> findProductList(ProductVO pvo) {//검색한 상품 가져오기
+		
+		List<ProductVO> plist = new ArrayList<>();
+
+		try {
+			con = ds.getConnection();
+			sql = "select * from product_list where p_name like ?";
+
+			pt = con.prepareStatement(sql);
+			pt.setString(1, pvo.getP_name());
+
+			rs = pt.executeQuery();
+
+			while(rs.next()) {
+				pvo = new ProductVO();
+				
+				pvo.setP_no(rs.getInt("p_no"));
+				pvo.setP_name(rs.getString("p_name"));
+				pvo.setP_before_price(rs.getInt("p_before_price"));
+				pvo.setP_price(rs.getInt("p_price"));
+				pvo.setP_img1(rs.getString("p_img1"));
+				pvo.setP_img2(rs.getString("p_img2"));
+				pvo.setP_class(rs.getString("p_class"));
+				pvo.setP_category(rs.getString("p_category"));
+				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
+				pvo.setP_rate(rate);
+				
+				plist.add(pvo);
+			}
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				if(rs != null) rs.close();
+				if(pt != null) pt.close();
+				if(con != null) con.close();
+			}catch(Exception e) {e.printStackTrace();}
+		}
+		return plist;
+	}
 
 }

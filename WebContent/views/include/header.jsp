@@ -31,6 +31,7 @@
 				<a href="main.net"><img src="./images/main/main_logo.png" alt="main_logo"></a>
 			</div>
 			<%-------------------------------------- sns쪽 메뉴 -------------------------------%>
+			
 			<div id="sns"> 
 				<a href="#" id="face">
 					<img src="./images/main/facebook_off.png" width="30" height="30"
@@ -48,9 +49,12 @@
 					<img src="./images/main/kakao_off.png" width="30" height="30" 
 					onmouseover="this.src='./images/main/kakao_on.png'"
 					onmouseout="this.src='./images/main/kakao_off.png'"></a>
-				<input type="text" id="search_text">
-				<input type="button" id="search_btn">
+			<form method="get" action=find.net>
+				<input type="text" id="search_text" name="search_text">
+				<input type="submit" id="search_btn" value="">
+			</form>
 			</div>
+			
 			<div class="clear"></div>
 			<%-------------------------------------- 메인 메뉴 --------------------------------%>
 			<nav>	
