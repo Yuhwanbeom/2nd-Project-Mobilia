@@ -161,7 +161,7 @@
 			<div class="clear"></div>
 			<div id="review_container">
 				<div id="titleCon">	
-					<div id="review_title">상품후기 <span>(46)</span></div>
+					<div id="review_title">상품후기 <span>(${listcount})</span></div>
 					<input type="hidden" id="p_no" value="${pv.p_no}">
 					<input type="button" id="reviewBtn"onclick="review_check();" value="후기 작성">
 					<p>상품과 무관한 사진 및 욕설/비속어가 포함된 리뷰는 고지 없이 삭제될 수 있습니다.<br>
@@ -169,38 +169,51 @@
 						위의 사유들로 인해 고지 없이 사진 및 리뷰가 삭제된 경우, 지급된 마일리지 일부 또는 전액이 회수될 수 있습니다.<br>
 						작성하신 리뷰의 사진 및 글은 마케팅에 활용될 수 있습니다.</p>
 				</div>
-				<div id="review">
-					<ul>
-						<li id="p_img1"><img src="./upload${pv.p_img1}" width="50" height="50" id="re_img">
-							<img src="./images/product/star1.png" width="13">
-							<img src="./images/product/star1.png" width="13">
-							<img src="./images/product/star1.png" width="13">
-							<img src="./images/product/star1.png" width="13">
-							<img src="./images/product/star0.png" width="13">
-						</li>
-						<li id="m_id"><span>kuil**** | 2023-04-14</span>
-						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
-					</ul>
+				<c:if test="${!empty rlist}">
+					<c:forEach var="r" items="${rlist}">
+						<div id="review">
+						<ul>	
+							<li id="p_img1">
+								<img src="./upload${r.p_img1}" width="50" height="50" id="re_img">
+								<img src="./images/product/star1.png" width="13">
+								<img src="./images/product/star1.png" width="13">
+								<img src="./images/product/star1.png" width="13">
+								<img src="./images/product/star1.png" width="13">
+								<img src="./images/product/star0.png" width="13">
+							</li>
+							<li id="m_id"><span>${r.p_name} | ${r.re_date}</span>
+							<li id="m_review"><span>${r.re_cont}</span>
+							</ul>
+						</div>
+						<div class="clear"></div>
+					</c:forEach>
+				</c:if>
+				<div id="contents2">
+					<c:if test="${page <= 1}">
+						[이전]&nbsp;
+					</c:if>
+					<c:if test="${page > 1}">
+						<a href="product_info.net?p_no=${pv.p_no}&page=${page-1}">[이전]</a>&nbsp;
+					</c:if>
+					
+					<%-- 현재 쪽번호 출력 --%>
+					<c:forEach var="a" begin="${startpage}" end="${endpage}" step="1">
+						<c:if test="${a == page}"> <%-- 현재 페이지가 선택된 경우 --%>
+							<${a}>
+						</c:if>
+						<c:if test="${a != page}"> <%-- 현재 페이지가 선택 안된 경우 --%>
+							<a href="product_info.net?p_no=${pv.p_no}&page=${a}">[${a}]</a>&nbsp;
+						</c:if>
+					</c:forEach>
+
+				
+					<c:if test="${page >= maxpage}">
+						[다음]
+					</c:if>
+					<c:if test="${page < maxpage}">
+						<a href="product_info.net?p_no=${pv.p_no}&page=${page+1}">[다음]</a>
+					</c:if>
 				</div>
-				<div class="clear"></div>
-				<div id="review">
-					<ul>
-						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
-						<li id="m_id"><span>kuil**** | 2023-04-14</span>
-						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
-					</ul>
-				</div>
-				<div class="clear"></div>
-				<div id="review">
-					<ul>
-						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
-						<li id="m_id"><span>kuil**** | 2023-04-14</span>
-						<li id="m_review"><span>너무 맘에 들어요! 다음에 또 모빌리아에서 구매할게요!</span>
-					</ul>
-				</div>
-				<div class="clear"></div>
-			</div>
-			
 			<div id="consult_container">
 				<div id="titleCon">	
 					<div id="review_title">상품문의 <span>(46)</span></div>
@@ -220,23 +233,8 @@
 					</ul>
 				</div>
 				<div class="clear"></div>
-				<div id="review">
-					<ul>
-						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
-						<li id="m_id"><span>kuil**** | 2023-04-14</span>
-						<li id="m_review"><span>비공개 문의입니다.</span>
-					</ul>
-				</div>
-				<div class="clear"></div>
-				<div id="review">
-					<ul>
-						<li id="p_img1"><img src="./images/bed/bed01.png" width="50" height="50"></li>
-						<li id="m_id"><span>kuil**** | 2023-04-14</span>
-						<li id="m_review"><span>비공개 문의입니다.</span>
-					</ul>
-				</div>
-				<div class="clear"></div>
 			</div>
 		</div>
 	</div>
+</div>
 <jsp:include page="../include/footer.jsp" />
