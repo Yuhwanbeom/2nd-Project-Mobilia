@@ -75,11 +75,11 @@ $(document).ready(function(){
 					</td>
 				</tr>
 				<tr>
-					<th>할인 전 가격</th>
+					<th>판매가</th>
 					<td><input name="p_before_price" id="p_before_price" size="14"></td>
 				</tr>
 				<tr>
-					<th>상품 가격</th>
+					<th>할인가</th>
 					<td><input name="p_price" id="p_price" size="14"></td>
 				</tr>
 				<tr>

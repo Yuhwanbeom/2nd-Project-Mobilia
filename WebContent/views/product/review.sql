@@ -16,6 +16,9 @@ nocache; --임시 메모리 사용하지 않겠다는 뜻
 
 ---------------------------------------------------
 
-select * from review_p;
-
+select rownum,p_no from review_p;
+select * from (select rownum rnum,p_no,m_id,p_img1,p_name,re_no,re_cont,re_star,re_date 
+from (select * from review_p order by re_no desc)) where rNum>=6 and rNum<=10 and p_no=28;
 drop table review_p;
+
+delete  review_p;
