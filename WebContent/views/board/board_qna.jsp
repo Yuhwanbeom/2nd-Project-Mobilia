@@ -32,7 +32,7 @@
 		<div id="board-data-area">
 			<label>${q.board_name}</label> | <label>${q.board_date}</label> | <label>조회수 ${q.board_hit}</label>
 		</div>
-	
+	</div>
  </c:forEach>
 </c:if>
 
@@ -96,7 +96,6 @@
     </c:if>
    </c:if> 
    </div>
-  </
    </form>
 </div>
 <jsp:include page="../include/footer.jsp" />

@@ -30,4 +30,8 @@ delete product_list;
 
 drop table product_list;
 
+select * from product_list where p_name like '%테%';
+
 drop sequence product_no_seq;
+
+commit;
