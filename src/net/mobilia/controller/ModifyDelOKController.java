@@ -23,7 +23,7 @@ public class ModifyDelOKController implements Action {
 		if(id==null) {
 			out.println("<script>");
 			out.println("alert('다시 로그인 하세요!');");
-			out.println("location='main.net';");
+			out.println("location='login.net';");
 			out.println("</script>");
 		}else {
 			MemberDAOImpl mdao = new MemberDAOImpl();
@@ -34,9 +34,10 @@ public class ModifyDelOKController implements Action {
 			
 			MemberVO m_pwd = mdao.getMember(id);
 			
-			if(!m_pwd.getM_pwd().contentEquals(del_pwd)) {
+			if(!m_pwd.getM_pwd().equals(del_pwd)) {
 				out.println("<script>");
-				out.println("alert('비밀번호가 일치하지 않습니다!);");
+				out.println("alert('비밀번호가 일치하지 않습니다!');");
+				out.println("window.location = document.referrer;");//이전 페이지로 이동하면서 새로고침 하기(탈퇴사유 선택된거 리셋)
 				out.println("</script>");
 			}else {
 				MemberVO mvo = new MemberVO();
@@ -46,8 +47,9 @@ public class ModifyDelOKController implements Action {
 				session.invalidate();
 				
 				out.println("<script>");
-				out.println("alert('회원탈퇴가 처리되었습니다.");
-				out.println("location='main.net';");
+				out.println("alert('회원탈퇴가 처리되었습니다.');");
+				out.println("opener.parent.location.reload();");//공지창을 부른 부모창을 새로고침함
+				out.println("window.close();");//공지창 닫음
 				out.println("</script>");
 			}
 		}
