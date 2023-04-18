@@ -219,4 +219,36 @@ public class QnaBoardDAOImpl {
 		}
 	}
 
+
+	//QnA 게시물 수정
+	public int editQnaBoard(QnaBoardVO qvo) {
+		int re=-1;
+		
+		try {
+			
+			con=ds.getConnection();
+			sql="update qna_board set board_name=?,board_title=?,board_cont=? "
+					+ "where board_no=?";
+			pt=con.prepareStatement(sql);
+			
+			pt.setString(1, qvo.getBoard_name());
+			pt.setString(2, qvo.getBoard_title());
+			pt.setString(3, qvo.getBoard_cont());
+			pt.setInt(4, qvo.getBoard_no());
+			
+			re=pt.executeUpdate();
+			
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				
+				if(pt != null) pt.close();
+				if(con != null) con.close();
+				
+			}catch(Exception e) {e.printStackTrace();}
+		}
+		
+		return re;
+	}
+
 }

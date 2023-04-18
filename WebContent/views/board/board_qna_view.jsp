@@ -12,10 +12,10 @@
 <div class="board-state-button-area">
 <c:if test="${qvo.board_name == id}">
  <span id="state-left">
-  <input type="button" value="수정" onclick="location='qna_view.net?board_no=${qvo.board_no}&
-  page=${page}&state=edit';"/>
-  <input type="button" value="삭제" onclick="location='qna_view.net?board_no=${qvo.board_no}&
-  page=${page}&state=del';"/>
+  
+  <a href="qna_view.net?board_no=${qvo.board_no}&page=${page}&state=edit" class="edit">수정</a>
+  
+  <a href="qna_view.net?board_no=${qvo.board_no}&page=${page}&state=del" class="del">삭제</a>
  </span>
 </c:if>
  <span id="state-right">

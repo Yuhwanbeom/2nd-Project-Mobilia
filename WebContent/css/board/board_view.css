@@ -23,3 +23,16 @@
 	opacity:0.6;
 	cursor:pointer;
 }
+
+.edit{
+	text-decoration:none;
+	border:1px solid black;
+	font-size:17px;
+	font-weight:bold;
+	color:black;
+	background-color:gray;
+}
+
+.del{
+	text-decoration:none;
+}

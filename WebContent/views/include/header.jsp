@@ -48,8 +48,8 @@
 					<img src="./images/main/kakao_off.png" width="30" height="30" 
 					onmouseover="this.src='./images/main/kakao_on.png'"
 					onmouseout="this.src='./images/main/kakao_off.png'"></a>
-				<input type="search" id="find_name" name="find_name" value="${find_name}">
-				<input type="submit" id="search_btn" >
+				<input type="text" id="search_text">
+				<input type="button" id="search_btn">
 			</div>
 			<div class="clear"></div>
 			<%-------------------------------------- 메인 메뉴 --------------------------------%>
