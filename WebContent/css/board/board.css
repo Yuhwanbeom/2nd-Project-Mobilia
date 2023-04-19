@@ -93,7 +93,7 @@
 	
 }
 #bList_paging{
-	border:1px solid red;
+	padding-top:13px;
 	width:auto; height:50px;
 	float:center;
 	text-align:center;

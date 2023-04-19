@@ -418,6 +418,7 @@ public class ProductDAOImpl {
 		return pv;
 	}//getBoardCont()
 
+
 	public List<ProductVO> findProductList(ProductVO pvo) {//검색한 상품 가져오기
 		
 		List<ProductVO> plist = new ArrayList<>();
