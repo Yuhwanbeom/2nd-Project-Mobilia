@@ -4,7 +4,7 @@
   
     <div class="login_containers">
         <h2>
-            로그인
+            Login
         </h2>
         <form method="post" action="login_ok.net">
             <h3>아이디</h3>
