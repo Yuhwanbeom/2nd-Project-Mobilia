@@ -44,10 +44,10 @@ public class QnaViewController implements Action {
 		
 		if(state.equals("cont")) {//내용보기 일때
 			forward.setPath("./views/board/board_qna_view.jsp");
-		}else if(state.equals("edit")) {//답변글 폼일때
-			forward.setPath("./views/board/board_edit.jsp");
-		}else if(state.equals("del")) {//수정폼 일때
-			forward.setPath("./views/board/board_del.jsp");
+		}else if(state.equals("edit")) {//수정 폼일때
+			forward.setPath("./views/board/board_qna_edit.jsp");
+		}else if(state.equals("del")) {//삭제 폼 일때
+			forward.setPath("./views/board/board_qna_del.jsp");
 		}
 		return forward;
 	}

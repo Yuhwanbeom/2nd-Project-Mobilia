@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <jsp:include page="./include/header.jsp" />
 
 <link rel="stylesheet" type="text/css" href="./css/jquery.bxslider.min.css">
@@ -36,72 +38,87 @@
 				<p>BEST SELLER</p>
 			</div>
 			<ul>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_01.png" width="300" height="300"
-						></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_02.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_03.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_04.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_05.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_06.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_07.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>				
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_08.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-			</ul>
+	            <li id="product">
+	               <div id="product_img"><a href="#">
+	               		<img src="./images/main/bs_01.png" width="300" height="300"></a></div>
+	               <ul id="product_info">
+	                  <li><a href="#" style="text-decoration:none;"><span style="font-size:14px;color:#333333;font-weight:bold;">상품명</span></a></li>
+	                  <li><span style="font-size: 14px; color: #a1a1a1; font-weight: bold; 
+								text-decoration: line-through;">319,000원</span></li>
+	                  <li><span style="font-size: 14px; color: #971215; font-weight: bold;">298,000원</span></li>
+	               </ul>
+	            </li>
+	            <li id="product">
+	               <div id="product_img"><a href="#">
+	               		<img src="./images/main/bs_02.png" width="300" height="300"></a></div>
+	               <ul id="product_info">
+	                  <li><a href="#" style="text-decoration:none;"><span style="font-size:14px;color:#333333;font-weight:bold;">상품명</span></a></li>
+	                  <li><span style="font-size: 14px; color: #a1a1a1; font-weight: bold; 
+								text-decoration: line-through;">319,000원</span></li>
+	                  <li><span style="font-size: 14px; color: #971215; font-weight: bold;">298,000원</span></li>
+	               </ul>
+	            </li>
+	            <li id="product">
+	               <div id="product_img"><a href="#">
+	               		<img src="./images/main/bs_03.png" width="300" height="300"></a></div>
+	               <ul id="product_info">
+	                  <li><a href="#" style="text-decoration:none;"><span style="font-size:14px;color:#333333;font-weight:bold;">상품명</span></a></li>
+	                  <li><span style="font-size: 14px; color: #a1a1a1; font-weight: bold; 
+								text-decoration: line-through;">319,000원</span></li>
+	                  <li><span style="font-size: 14px; color: #971215; font-weight: bold;">298,000원</span></li>
+	               </ul>
+	            </li>
+	            <li id="product">
+	               <div id="product_img"><a href="#">
+	               		<img src="./images/main/bs_04.png" width="300" height="300"></a></div>
+	               <ul id="product_info">
+	                  <li><a href="#" style="text-decoration:none;"><span style="font-size:14px;color:#333333;font-weight:bold;">상품명</span></a></li>
+	                  <li><span style="font-size: 14px; color: #a1a1a1; font-weight: bold; 
+								text-decoration: line-through;">319,000원</span></li>
+	                  <li><span style="font-size: 14px; color: #971215; font-weight: bold;">298,000원</span></li>
+	               </ul>
+	            </li>
+	            <li id="product">
+	               <div id="product_img"><a href="#">
+	               		<img src="./images/main/bs_05.png" width="300" height="300"></a></div>
+	               <ul id="product_info">
+	                  <li><a href="#" style="text-decoration:none;"><span style="font-size:14px;color:#333333;font-weight:bold;">상품명</span></a></li>
+	                  <li><span style="font-size: 14px; color: #a1a1a1; font-weight: bold; 
+								text-decoration: line-through;">319,000원</span></li>
+	                  <li><span style="font-size: 14px; color: #971215; font-weight: bold;">298,000원</span></li>
+	               </ul>
+	            </li>
+	            <li id="product">
+	               <div id="product_img"><a href="#">
+	               		<img src="./images/main/bs_06.png" width="300" height="300"></a></div>
+	               <ul id="product_info">
+	                  <li><a href="#" style="text-decoration:none;"><span style="font-size:14px;color:#333333;font-weight:bold;">상품명</span></a></li>
+	                  <li><span style="font-size: 14px; color: #a1a1a1; font-weight: bold; 
+								text-decoration: line-through;">319,000원</span></li>
+	                  <li><span style="font-size: 14px; color: #971215; font-weight: bold;">298,000원</span></li>
+	               </ul>
+	            </li>
+	            <li id="product">
+	               <div id="product_img"><a href="#">
+	               		<img src="./images/main/bs_07.png" width="300" height="300"></a></div>
+	               <ul id="product_info">
+	                  <li><a href="#" style="text-decoration:none;"><span style="font-size:14px;color:#333333;font-weight:bold;">상품명</span></a></li>
+	                  <li><span style="font-size: 14px; color: #a1a1a1; font-weight: bold; 
+								text-decoration: line-through;">319,000원</span></li>
+	                  <li><span style="font-size: 14px; color: #971215; font-weight: bold;">298,000원</span></li>
+	               </ul>
+	            </li>            
+	            <li id="product">
+	               <div id="product_img"><a href="#">
+	               		<img src="./images/main/bs_08.png" width="300" height="300"></a></div>
+	               <ul id="product_info">
+	                  <li><a href="#" style="text-decoration:none;"><span style="font-size:14px;color:#333333;font-weight:bold;">상품명</span></a></li>
+	                  <li><span style="font-size: 14px; color: #a1a1a1; font-weight: bold; 
+								text-decoration: line-through;">319,000원</span></li>
+	                  <li><span style="font-size: 14px; color: #971215; font-weight: bold;">298,000원</span></li>
+	               </ul>
+	            </li>
+	         </ul>
 			<div id="new_item_p"></div>
 			<div id="main_block"></div>
 		</div>
@@ -112,70 +129,40 @@
 				<p>NEW ITEM</p>
 			</div>
 			<ul>
+			<c:if test="${!empty nlist}">
+				<c:forEach var="n" items="${nlist}">
 				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_01.png" width="300" height="300"></a></div>
+					<div id="product_img">
+						<a href="#">
+							<img src="./upload${n.p_img1}" width="300" height="300"
+								onmouseover="this.src='./upload${n.p_img2}'"
+								onmouseout="this.src='./upload${n.p_img1}'">
+						</a>
+					</div>
 					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
+						<li><a href="#" style="text-decoration:none;">
+								<span style="font-size:14px;color:#333333;font-weight:bold;">${m.p_name}
+								</span>
+							</a>
+						</li>
+						<li><span style="font-size: 14px; color: #a1a1a1; font-weight: bold; 
+								text-decoration: line-through;">
+								<fmt:formatNumber value="${n.p_before_price}" pattern="###,###,###"/>원
+							</span>
+						</li>
+						<li><span style="font-size: 14px; color: #971215; font-weight: bold;">
+								<span>
+									<fmt:formatNumber value="${n.p_price}" pattern="###,###,###"/>원
+									<input type="hidden" value="${n.p_price}" id="p_price">
+								<span id="discount_rate"style="font-size:14px;color:#045443;font-weight:bold;">
+								${n.p_rate}%</span>
+								</span>	
+							</span>
+						</li>
 					</ul>
 				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_02.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_03.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_04.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_05.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_06.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_07.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>				
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_08.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
+				</c:forEach>
+			</c:if>
 			</ul>
 			<div id="md_choice_p"></div>
 			<div id="main_block"></div>
@@ -187,70 +174,40 @@
 				<p>MD's CHOICE</p>
 			</div>
 			<ul>
+			<c:if test="${!empty mlist}">
+				<c:forEach var="m" items="${mlist}">
 				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_01.png" width="300" height="300"></a></div>
+					<div id="product_img">
+						<a href="#">
+							<img src="./upload${m.p_img1}" width="300" height="300"
+								onmouseover="this.src='./upload${m.p_img2}'"
+								onmouseout="this.src='./upload${m.p_img1}'">
+						</a>
+					</div>
 					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
+						<li><a href="#" style="text-decoration:none;">
+								<span style="font-size:14px;color:#333333;font-weight:bold;">${m.p_name}
+								</span>
+							</a>
+						</li>
+						<li><span style="font-size: 14px; color: #a1a1a1; font-weight: bold; 
+								text-decoration: line-through;">
+								<fmt:formatNumber value="${m.p_before_price}" pattern="###,###,###"/>원
+							</span>
+						</li>
+						<li><span style="font-size: 14px; color: #971215; font-weight: bold;">
+								<span>
+									<fmt:formatNumber value="${m.p_price}" pattern="###,###,###"/>원
+									<input type="hidden" value="${m.p_price}" id="p_price">
+								<span id="discount_rate"style="font-size:14px;color:#045443;font-weight:bold;">
+								${m.p_rate}%</span>
+								</span>	
+							</span>
+						</li>
 					</ul>
 				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_02.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_03.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_04.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_05.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_06.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_07.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>				
-				<li id="product">
-					<div id="product_img"><a href="#"><img src="./images/main/bs_08.png" width="300" height="300"></a></div>
-					<ul id="product_info">
-						<li><a href="#"><span style="font-size:13px;color:#333333;font-weight:bold;">상품명</span></a></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;text-decoration:line-through;">319,000원</span></li>
-						<li><span style="font-size:13px;color:#333333;font-weight:bold;">298,000원</span></li>
-					</ul>
-				</li>
+				</c:forEach>
+			</c:if>
 			</ul>
 		</div>
 	</div>
