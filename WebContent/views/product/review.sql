@@ -23,4 +23,5 @@ drop table review_p;
 
 delete  review_p;
 
+
 select * from (select * from product_list where p_choice=1 order by p_no desc) where ROWNUM <= 8;

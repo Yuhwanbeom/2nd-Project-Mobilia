@@ -27,8 +27,8 @@ select * from (select * from product_list where p_choice=1 order by p_no desc) w
 
 select * from PRODUCT_list where p_choice=1 order by p_no desc;
 
-delete product_list;
-
+delete product_list where p_no=32;
+commit;
 drop table product_list;
 
 select * from product_list where p_name like '%테%';
