@@ -176,9 +176,6 @@
 							<li id="p_img1">
 								<img src="./upload${r.p_img1}" width="50" height="50" id="re_img">
 								<img src="./images/product/star1.png" width="13">
-								<img src="./images/product/star1.png" width="13">
-								<img src="./images/product/star1.png" width="13">
-								<img src="./images/product/star1.png" width="13">
 								<img src="./images/product/star0.png" width="13">
 							</li>
 							<li id="m_id"><span>${r.p_name} | ${r.re_date}</span>
@@ -205,7 +202,6 @@
 							<a href="product_info.net?p_no=${pv.p_no}&page=${a}">[${a}]</a>&nbsp;
 						</c:if>
 					</c:forEach>
-
 				
 					<c:if test="${page >= maxpage}">
 						[다음]
