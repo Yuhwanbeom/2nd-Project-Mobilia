@@ -26,14 +26,18 @@ $(document).ready(function() {
        $('#sns').css("margin","10px 0px 0px 30px"); //sns margin값 변경
        $('#login').css("margin","15px 50px 0px 0px"); //login margin값 변경
        $('#sidebar_02').css("display","block"); //up,down 버튼 보이게
+	   $('#search_btn').css("top","12px");
+	   $('#search_text').css("top","10px");
      } 
      // 아니면 클래스 'drop'을 제거
      else {
        header.classList.remove("drop");
-       $('#logo').html("<a href='index.jsp'><img src='./images/main/main_logo.png' alt='main_logo'></a>"); // logo에 이미지 다시 추가
+       $('#logo').html("<a href='main.net'><img src='./images/main/main_logo.png' alt='main_logo'></a>"); // logo에 이미지 다시 추가
        $('#sns').css("margin","30px 0px 0px 30px"); //margin 초기치 변경
        $('#login').css("margin","35px 50px 0px 0px");  //margin 초기치 변경
        $('#sidebar_02').css("display","none");   //up,down 버튼 감춤
+	   $('#search_text').css("top","38px");
+	   $('#search_btn').css("top","40px");
      }
    };
    $('#best_seller_btn').click(function(){

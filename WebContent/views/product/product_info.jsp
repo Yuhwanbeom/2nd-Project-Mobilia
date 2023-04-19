@@ -104,14 +104,14 @@
 		<div id="sub_info">
 			<div id="sub">
 			<h2>- 상품 정보 -</h2>
-				<img src="./images/bed/size_info.jpg">
+				<img src="./images/product/size_info.jpg">
 			</div>
 			<div id="sub">
 				<img src="./upload${pv.p_img1}">
 				<img src="./upload${pv.p_img2}">
 			</div>
 			<div id="sub">
-				<img src="./images/bed/delivery_info.png" width="1100">
+				<img src="./images/product/delivery_info.png" width="1100">
 			</div>
 			<div class="clear"></div>
 			<div id="info_text">

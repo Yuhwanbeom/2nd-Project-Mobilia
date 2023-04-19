@@ -72,11 +72,11 @@
 								<li></li>
 							</ul>
 							<ul>
-								<li><a href="list_bed.net?c=bed&state=single">Single</a></li>
-								<li><a href="list_bed.net?c=bed&state=super single">Super Single</a></li>
-								<li><a href="list_bed.net?c=bed&state=double">Double</a></li>
-								<li><a href="list_bed.net?c=bed&state=queen">Queen</a></li>
-								<li><a href="list_bed.net?c=bed&state=king">King</a></li>
+								<li><a href="list_bed.net?c=bed&state=single">싱글 사이즈</a></li>
+								<li><a href="list_bed.net?c=bed&state=super single">슈퍼싱글</a></li>
+								<li><a href="list_bed.net?c=bed&state=double">더블 사이즈</a></li>
+								<li><a href="list_bed.net?c=bed&state=queen">퀸 사이즈</a></li>
+								<li><a href="list_bed.net?c=bed&state=king">킹 사이즈</a></li>
 							</ul>
 							<ul>
 								<li><a href="list_sofa.net?c=sofa&state=1인용 소파">1인용 소파</a></li>
@@ -106,11 +106,7 @@
 								<li><a href="list_cabinet.net?c=cabinet&state=신발장">신발장</a></li>
 							</ul>
 							<ul>
-								<li><a href="#">menu 01</a></li>
-								<li><a href="#">menu 02</a></li>
-								<li><a href="#">menu 03</a></li>
-								<li><a href="#">menu 04</a></li>
-								<li><a href="#">menu 05</a></li>
+								<li><a href="#">찾아오시는 길</a></li>
 							</ul>
 							<button type="button" id="all_menu_close">X</button>
 						</div>
@@ -118,11 +114,11 @@
 					<%-------------------------- 상단 메뉴--------------------------%>
 					<li><a href="list_bed.net?c=bed&state=all">Bed</a>
 						<ul class="sub_menu">
-							<li><a href="list_bed.net?c=bed&state=single">Single</a></li>
-							<li><a href="list_bed.net?c=bed&state=super single">Super Single</a></li>
-							<li><a href="list_bed.net?c=bed&state=double">Double</a></li>
-							<li><a href="list_bed.net?c=bed&state=queen">Queen</a></li>
-							<li><a href="list_bed.net?c=bed&state=king">King</a></li>
+							<li><a href="list_bed.net?c=bed&state=single">싱글 사이즈</a></li>
+							<li><a href="list_bed.net?c=bed&state=super single">슈퍼싱글</a></li>
+							<li><a href="list_bed.net?c=bed&state=double">더블 사이즈</a></li>
+							<li><a href="list_bed.net?c=bed&state=queen">퀸 사이즈</a></li>
+							<li><a href="list_bed.net?c=bed&state=king">킹 사이즈</a></li>
 						</ul>
 					</li>
 					<li><a href="list_sofa.net?c=sofa&state=all">Sofa</a>
@@ -162,11 +158,7 @@
 					</li>
 					<li><a href="about_us_location.net">About us</a>
 						<ul class="sub_menu">
-							<li><a href="#">menu 01</a>
-							<li><a href="#">menu 02</a>
-							<li><a href="#">menu 03</a>
-							<li><a href="#">menu 04</a>
-							<li><a href="#">menu 05</a>
+							<li><a href="#">찾아오시는 길</a>
 						</ul>
 					</li>
 				</ul>

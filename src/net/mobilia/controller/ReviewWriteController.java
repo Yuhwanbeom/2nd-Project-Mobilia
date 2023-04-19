@@ -24,6 +24,7 @@ public class ReviewWriteController implements Action {
 			out.println("<script>");
 			out.println("alert('로그인 후 작성해주세요!');");
 			out.println("self.close();");
+			out.println("opener.parent.location.href='login.net';");
 			out.println("</script>");
 		}else {
 			int p_no =Integer.parseInt(request.getParameter("p_no"));
