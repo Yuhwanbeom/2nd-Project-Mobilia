@@ -14,7 +14,7 @@
  <span id="state-left">
   
   <a href="qna_view.net?board_no=${qvo.board_no}&page=${page}&state=edit" class="edit">수정</a>
-  
+  /
   <a href="qna_view.net?board_no=${qvo.board_no}&page=${page}&state=del" class="del">삭제</a>
  </span>
 </c:if>
