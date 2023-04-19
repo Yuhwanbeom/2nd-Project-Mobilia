@@ -1,9 +1,11 @@
 package net.mobilia.controller;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import net.mobilia.dao.ProductDAOImpl;
 import net.mobilia.dao.ReviewDAOImpl;
@@ -68,6 +70,7 @@ public class ProductInfoController implements Action {
 		request.setAttribute("maxpage", maxpage);//총 페이지 수
 		request.setAttribute("listcount", listcount);
 		request.setAttribute("rlist", rlist);
+		
 		
 		ActionForward forward = new ActionForward();
 		forward.setRedirect(false);

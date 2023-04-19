@@ -59,7 +59,7 @@ $(document).ready(function(){
 });
 
 function review_check(){
-    var _width = '400';
+    var _width = '600';
     var _height = '600';
 	var p_no = $('#p_no').val();
 	var url="review_write.net?p_no="+p_no;//매핑주소
@@ -71,7 +71,7 @@ function review_check(){
     		+', left='+ _left+',top='+_top);
 	}
 function inquiry_check(){
-    var _width = '400';
+    var _width = '600';
     var _height = '600';
  	var p_no = $('#p_no').val();
 	var url="inquiry_write.net?p_no="+p_no;//매핑주소

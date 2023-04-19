@@ -12,6 +12,7 @@ table {
 }
 #starTable{
 	float:left;
+	margin-left: 100px;
 }
 #starTable th{
 	width:60px;
@@ -23,6 +24,7 @@ table {
 #starText{
 	display:inline-block;
 	margin:8px 0px 0px 0px;
+	margin-right:65px;
 	font-size:0.8em;
 }
 #pr_info{
@@ -41,7 +43,7 @@ table {
 	display:block;
 }
 #pr_info2 img{
-	margin-left:37px;
+	margin-left:140px;
 	padding: 2px;
 	border:1px solid #e8e8e8;
 }
@@ -57,14 +59,14 @@ table {
 	position:absolute;
 	display: inline-block;
 	font-weight: 600;
-	top:95px;
-	left:154px;
+	top:97px;
+	left:255px;
 	padding:2px;
 }
 #reviewTable{
 	
-	width:80%;
-	margin:10px 0px 2px 38px;
+	width:52.8%;
+	margin:10px 0px 2px 139px;
 }
 
 textarea{
