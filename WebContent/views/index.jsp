@@ -132,7 +132,7 @@
 			<c:if test="${!empty nlist}">
 				<c:forEach var="n" items="${nlist}">
 				<li id="product">
-					<div id="product_img">
+					<div id="product_img1">
 						<a href="#">
 							<img src="./upload${n.p_img1}" width="300" height="300"
 								onmouseover="this.src='./upload${n.p_img2}'"
@@ -177,7 +177,7 @@
 			<c:if test="${!empty mlist}">
 				<c:forEach var="m" items="${mlist}">
 				<li id="product">
-					<div id="product_img">
+					<div id="product_img1">
 						<a href="#">
 							<img src="./upload${m.p_img1}" width="300" height="300"
 								onmouseover="this.src='./upload${m.p_img2}'"
