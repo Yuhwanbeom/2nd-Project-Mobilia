@@ -3,6 +3,7 @@ package net.mobilia.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import javax.naming.Context;
@@ -223,6 +224,63 @@ public class MemberDAOImpl {
 			}catch(Exception e) {e.printStackTrace();}
 		}
 	}
+
+
+	//비밀번호 찾기
+	public MemberVO pwdMember(MemberVO m) {
+		MemberVO pm=null;
+		
+		try {
+			con=ds.getConnection();
+			st=con.createStatement();
+			sql="select * from m_member where m_id='"+m.getM_id()+"' and m_name='"
+					+m.getM_name()+"' and mail_id='"+m.getMail_id()+ "'and mail_domain='"+m.getMail_domain()+"'";
+			rs=st.executeQuery(sql);
+			
+			if(rs.next()) {
+				pm=new MemberVO();
+				pm.setM_pwd(rs.getString("m_pwd"));
+			}
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				if(rs != null) rs.close();
+				if(st != null) st.close();
+				if(con != null) con.close(); 
+			}catch(Exception e) {e.printStackTrace();}
+		}
+		return pm;
+	}
+
+	//아이디찾기
+	public MemberVO idMember(MemberVO m) {
+		MemberVO pm2=null;
+		
+		try {
+			con=ds.getConnection();
+			st=con.createStatement();
+			sql="select * from m_member where m_name='"+m.getM_name()+"'"
+					+" and mail_id='"+m.getMail_id()+ "'and mail_domain='"+m.getMail_domain()+"'";
+			rs=st.executeQuery(sql);
+			
+			if(rs.next()) {
+				pm2=new MemberVO();
+				pm2.setM_id(rs.getString("m_id"));
+			}
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				if(rs != null) rs.close();
+				if(st != null) st.close();
+				if(con != null) con.close(); 
+			}catch(Exception e) {e.printStackTrace();}
+		}
+		return pm2;
+	}
+	
+	
+	
+	
 	
 	
 	
