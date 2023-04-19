@@ -10,6 +10,10 @@ public class ReviewVO {
 	private int re_star;
 	private String re_date;
 	
+	//페이징(쪽나누기) 관련 변수
+	private int startrow;//시작행 번호
+	private int endrow;//끝행 번호
+		
 	
 	public int getP_no() {
 		return p_no;
@@ -58,5 +62,17 @@ public class ReviewVO {
 	}
 	public void setRe_date(String re_date) {
 		this.re_date = re_date.substring(0, 10);
+	}
+	public int getStartrow() {
+		return startrow;
+	}
+	public void setStartrow(int startrow) {
+		this.startrow = startrow;
+	}
+	public int getEndrow() {
+		return endrow;
+	}
+	public void setEndrow(int endrow) {
+		this.endrow = endrow;
 	}
 }

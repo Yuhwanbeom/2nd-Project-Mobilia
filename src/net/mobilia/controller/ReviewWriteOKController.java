@@ -39,7 +39,7 @@ public class ReviewWriteOKController implements Action {
 		
 		if(re==1) {
 			out.println("<script>");
-			out.println("alert('상품후기가 등록 되었습니다.');");
+			out.println("alert('등록 되었습니다.');");
 			out.println("opener.parent.location.reload();");//공지창을 부른 부모창을 새로고침함
 			out.println("window.close();");//공지창 닫음
 			out.println("</script>");

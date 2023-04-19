@@ -16,7 +16,11 @@
                 <input type="password" class="input" placeholder="비밀번호" id="m_pwd" name="m_pwd" maxlength="20">
             </div>
             <input type="submit" class="bt_login" value="로그인">
+            
+           
         </form>
+        <button type="button" class=findid onclick="location='find_id.net'">아이디 찾기</button>
+        <button type="button" class=findid onclick="location='find_pwd.net'">비밀번호 찾기</button>
     </div>
 
 

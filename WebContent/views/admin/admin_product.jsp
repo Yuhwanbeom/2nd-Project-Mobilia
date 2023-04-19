@@ -6,60 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <script src="./js/jquery.js"></script>
+<script src="./js/admin/admin_product.js"></script>
 <title></title>
-<script>
-function categoryChange(e) {
-	var opt_a = ["single", "super single", "double", "queen", "king"];
-	var opt_b = ["1인용 소파", "2~3인용 소파", "카우치형 소파", "리클라이너 소파"];
-	var opt_c = ["주방용 테이블", "사무용 테이블", "거실용 테이블", "H형 책상", "좌식 책상"];
-	var opt_d = ["식탁 의자", "책상 의자", "서재/사무용 의자", "침대형 의자", "게이밍 체어"];
-	var opt_e = ["옷장", "드레스룸", "수납장", "붙박이장", "신발장"];
-	var target = document.getElementById("p_category");
-
-	if(e.value == "bed") var d = opt_a;
-	else if(e.value == "sofa") var d = opt_b;
-	else if(e.value == "table") var d = opt_c;
-	else if(e.value == "chair") var d = opt_d;
-	else if(e.value == "cabinet") var d = opt_e;
-
-	target.options.length = 0;
-
-	for (x in d) {
-		var opt = document.createElement("option");
-		opt.value = d[x];
-		opt.innerHTML = d[x];
-		target.appendChild(opt);
-	}	
-}
-
-$(document).ready(function(){
-	$("#color_count").change(function(event) {
-		var cnt = $(this).val();
-		
-		$("#demo").empty();
-		for (var i = 0; i < cnt; i++) {
-
-			 var $txtbox ='<input id="p_color" name="p_color'+i+'" size="8"placeholder="색상 '+(i+1)+'"><br>'
-			$("#demo").append($txtbox);
-		}
-	});
-	$("#size_count").change(function(event) {
-		var cnt = $(this).val();
-		
-		$("#demo1").empty();
-		for (var i = 0; i < cnt; i++) {
-			 var $txtbox = '<input id="p_size" name="p_size'+i+'" size="24" placeholder="사이즈 '+(i+1)+'"><br>'
-			$("#demo1").append($txtbox);
-		}
-	});
-});
-</script>
 </head>
 <body>
 <div>
-		<h2>상품 등록</h2>
-		<form method="post" action="product_join_ok.net" 
-		onsubmit="return product_join_check();" enctype="multipart/form-data">
+	<h2>상품 등록</h2>
+	<form method="post" action="product_join_ok.net" 
+	onsubmit="return product_join_check();" enctype="multipart/form-data">
 		<%-- 
 			파일을 첨부해서 서버에 업로드 하려면 추가 해야할 코드) => 자료실 만들 때 필요한 코드
 			 1. 폼태그 내에 enctype="multipart/form-data" 속성을 지정해야 한다. 
@@ -75,26 +29,26 @@ $(document).ready(function(){
 					</td>
 				</tr>
 				<tr>
-					<th>할인 전 가격</th>
-					<td><input name="p_before_price" id="p_before_price" size="14"></td>
+					<th>판매가</th>
+					<td><input name="p_before_price" id="p_before_price" size="14">원</td>
 				</tr>
 				<tr>
-					<th>상품 가격</th>
-					<td><input name="p_price" id="p_price" size="14"></td>
+					<th>할인가</th>
+					<td><input name="p_price" id="p_price" size="14">원</td>
 				</tr>
 				<tr>
 					<th>상품 수량</th>
-					<td><input name="p_amount" id="p_amount" size="14"></td>
+					<td><input name="p_amount" id="p_amount" size="14">개</td>
 				</tr>
 				
 				<tr>
 					<th>상품 이미지1</th>
-					<td><input type="file" name="p_img1" id="p_img2"></td>
+					<td><input type="file" name="p_img1" id="p_img2" required="required"></td>
 				</tr>
 				
 				<tr>
 					<th>상품 이미지2</th>
-					<td><input type="file" name="p_img2" id="p_img2"></td>
+					<td><input type="file" name="p_img2" id="p_img2" required="required"></td>
 				</tr>
 				
 				<tr>
@@ -106,7 +60,7 @@ $(document).ready(function(){
 					<th>상품 분류</th>
 					<td>
 						<select name="p_class" id="p_class" onchange="categoryChange(this)">
-							<option>선택</option>
+							<option value="">선택</option>
 							<option value="bed">Bed</option>
 							<option value="sofa">Sofa</option>
 							<option value="table">Table</option>
@@ -129,7 +83,7 @@ $(document).ready(function(){
 					<th>색상</th>
 					<td>
 					<select name="color_count" id="color_count">
-						<option>선택</option>
+						<option value="">선택</option>
 						<option value="1">1개</option>
 						<option value="2">2개</option>
 						<option value="3">3개</option>
@@ -148,7 +102,7 @@ $(document).ready(function(){
 					<th>사이즈</th>
 					<td>
 					<select name="size_count" id="size_count">
-						<option>선택</option>
+						<option value="">선택</option>
 						<option value="1">1개</option>
 						<option value="2">2개</option>
 						<option value="3">3개</option>
