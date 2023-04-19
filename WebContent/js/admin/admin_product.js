@@ -100,59 +100,27 @@ function product_join_check(){
 		$("#color_count").val("").focus();
 		return false;
 	}
-	if($.trim($("#p_color0").val())==""){
-		alert("색상1을 입력하세요!");
-		$("#p_color0").val("").focus();
-		return false;
-	}
-	if($.trim($("#p_color1").val())==""){
-		alert("색상2를 입력하세요!");
-		$("#p_color1").val("").focus();
-		return false;
-	}
-	if($.trim($("#p_color2").val())==""){
-		alert("색상3을 입력하세요!");
-		$("#p_color2").val("").focus();
-		return false;
-	}
-	if($.trim($("#p_color3").val())==""){
-		alert("색상4를 입력하세요!");
-		$("#p_color3").val("").focus();
-		return false;
-	}
-	if($.trim($("#p_color4").val())==""){
-		alert("색상5를 입력하세요!");
-		$("#p_color4").val("").focus();
-		return false;
+	
+	var color_count= $("#color_count").val();
+	for(var i=0;i<color_count;i++){
+		if($.trim($("#p_color"+i).val())==""){
+			alert("색상"+(i+1)+"을 입력하세요!");
+			$("#p_color"+i).val("").focus();
+			return false;		
+		}
 	}
 	if($.trim($("#size_count").val())==""){
 		alert("사이즈를 선택하세요!");
 		$("#size_count").val("선택").focus();
 		return false;
 	}
-	if($.trim($("#p_size0").val())==""){
-		alert("사이즈1을 입력하세요!");
-		$("#p_size0").val("").focus();
+	
+	var size_count= $('#size_count').val();
+	for(var i=0;i<size_count;i++){
+		if($.trim($("#p_size"+i).val())==""){
+		alert("사이즈"+(i+1)+"을 입력하세요!");
+		$("#p_size"+i).val("").focus();
 		return false;
-	}
-	if($.trim($("#p_size1").val())==""){
-		alert("사이즈2을 입력하세요!");
-		$("#p_size1").val("").focus();
-		return false;
-	}
-	if($.trim($("#p_size2").val())==""){
-		alert("사이즈3을 입력하세요!");
-		$("#p_size2").val("").focus();
-		return false;
-	}
-	if($.trim($("#p_size3").val())==""){
-		alert("사이즈4을 입력하세요!");
-		$("#p_size3").val("").focus();
-		return false;
-	}
-	if($.trim($("#p_size4").val())==""){
-		alert("사이즈5을 입력하세요!");
-		$("#p_size4").val("").focus();
-		return false;
+		}
 	}
 }
