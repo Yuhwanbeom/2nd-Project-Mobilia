@@ -26,8 +26,8 @@ nocache; --임시 메모리 사용하지 않겠다는 뜻
 
 select * from PRODUCT_list;
 
-delete product_list;
-
+delete product_list where p_no=32;
+commit;
 drop table product_list;
 
 select * from product_list where p_name like '%테%';
