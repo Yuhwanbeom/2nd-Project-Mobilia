@@ -7,8 +7,8 @@
 			<h1 style="color:#333; font-size:32px;">검색결과</h1>
 		</div>
 <c:if test="${!empty plist}">
+<div id="product_list">
 		<c:forEach var="p" items="${plist}">
-			<div id="product_list">
 				<ul id="list_ul">
 					<li id="list">
 						<div id="list_img">
@@ -34,8 +34,9 @@
 						</ul>
 					</li>
 				</ul>
-				</div>
+				
 		</c:forEach>
+		</div>
 </c:if>
 <c:if test="${empty plist}">
 		<div style="margin-top:120px;">
