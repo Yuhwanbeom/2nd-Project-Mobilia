@@ -458,4 +458,102 @@ public class ProductDAOImpl {
 		return plist;
 	}
 
+	//New Item 가져오기
+	public List<ProductVO> getNewItem() {
+		
+		List<ProductVO> nlist=new ArrayList<>();
+		
+		try {
+			
+			con=ds.getConnection();
+			sql="select * from (select * from product_list order by p_no desc) where rownum <=8";
+			pt=con.prepareStatement(sql);
+			rs=pt.executeQuery();
+			
+			while(rs.next()) {
+				//복수개의 레코드가 검색되는 경우는 while 반복문으로 반복
+				ProductVO pv=new ProductVO();
+				pv.setP_no(rs.getInt("p_no"));
+				pv.setP_name(rs.getString("p_name"));
+				pv.setP_before_price(rs.getInt("p_before_price"));
+				pv.setP_price(rs.getInt("p_price"));
+				pv.setP_amount(rs.getInt("p_amount"));
+				pv.setP_sold(rs.getInt("p_sold"));
+				pv.setP_img1(rs.getString("p_img1"));
+				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_choice(rs.getInt("p_choice"));
+				pv.setP_class(rs.getString("p_class"));
+				pv.setP_category(rs.getString("p_category"));
+				pv.setP_date(rs.getString("p_date"));
+				pv.setP_info(rs.getString("p_info"));
+				pv.setP_color(rs.getString("p_color"));
+				pv.setP_size(rs.getString("p_size"));
+				
+				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
+				pv.setP_rate(rate);
+				nlist.add(pv);//컬렉션에 추가
+			}
+			
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				
+				if(rs != null) rs.close();
+				if(pt != null) pt.close();
+				if(con != null) con.close();
+				
+			}catch(Exception e) {e.printStackTrace();}
+		}
+		return nlist;
+	}
+
+	//Md's Choice 가져오기
+	public List<ProductVO> getMdChoice() {
+		
+		List<ProductVO> mlist=new ArrayList<>();
+		
+		try {
+			
+			con=ds.getConnection();
+			sql="select * from (select * from product_list where p_choice=1 order by p_no desc) where ROWNUM <= 8";
+			pt=con.prepareStatement(sql);
+			rs=pt.executeQuery();
+			
+			while(rs.next()) {
+				//복수개의 레코드가 검색되는 경우는 while 반복문으로 반복
+				ProductVO pv=new ProductVO();
+				pv.setP_no(rs.getInt("p_no"));
+				pv.setP_name(rs.getString("p_name"));
+				pv.setP_before_price(rs.getInt("p_before_price"));
+				pv.setP_price(rs.getInt("p_price"));
+				pv.setP_amount(rs.getInt("p_amount"));
+				pv.setP_sold(rs.getInt("p_sold"));
+				pv.setP_img1(rs.getString("p_img1"));
+				pv.setP_img2(rs.getString("p_img2"));
+				pv.setP_choice(rs.getInt("p_choice"));
+				pv.setP_class(rs.getString("p_class"));
+				pv.setP_category(rs.getString("p_category"));
+				pv.setP_date(rs.getString("p_date"));
+				pv.setP_info(rs.getString("p_info"));
+				pv.setP_color(rs.getString("p_color"));
+				pv.setP_size(rs.getString("p_size"));
+				
+				int rate=((rs.getInt("p_before_price") - rs.getInt("p_price")) *100 )/ rs.getInt("p_before_price");
+				pv.setP_rate(rate);
+				mlist.add(pv);//컬렉션에 추가
+			}
+			
+		}catch(Exception e) {e.printStackTrace();}
+		finally {
+			try {
+				
+				if(rs != null) rs.close();
+				if(pt != null) pt.close();
+				if(con != null) con.close();
+				
+			}catch(Exception e) {e.printStackTrace();}
+		}
+		return mlist;
+	}
+
 }
