@@ -43,7 +43,7 @@
 							onmouseover="this.src='./upload${p.p_img2}'"
 							onmouseout="this.src='./upload${p.p_img1}'"></a></div>
 							<ul id="list_info">
-								<li id="list_name"><a href="#"><span id="p_before_price"style="font-size:15px;color:#333333;font-weight:bold;"
+								<li id="list_name"><a href="product_info.net?p_no=${p.p_no}"><span id="p_before_price"style="font-size:15px;color:#333333;font-weight:bold;"
 								>${p.p_name}
 								</span></a></li>
 								<li id="list_price"><span style="font-size:14px;color:#a1a1a1;font-weight:bold;text-decoration:line-through;"
