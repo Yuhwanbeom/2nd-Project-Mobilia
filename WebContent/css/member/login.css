@@ -53,4 +53,45 @@
 	width:500px;
 	margin-left:auto;
 	margin-right:auto;
+	border: 1px solid black;
+	padding:20px;
+	text-aligh:center;
+	margin:center;
+	margin-top:30px;
+	margin-bottom:30px;
 }	
+.login2{
+	
+	text-align:center;
+	
+}
+
+.input1{
+	width:300px;
+	height:30px;
+}
+.btn1{
+	background-color:black;
+	color:white;
+	width:100px;
+	height:30px;
+	border-radius: 5px;
+}
+.btn1:hover{
+	background:gray;
+	
+}
+.login3{
+	margin-top:30px;
+}
+.login4{
+	margin-top:30px;
+	margin:center;
+	margin-left:auto;
+	margin-right:auto;
+}
+.find{
+	color:#0064FF;
+	font-family: cursive; 
+	font-weight:bold;
+}
