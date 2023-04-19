@@ -4,6 +4,7 @@
     display: block;
     margin: 100px auto;
     text-align: center;
+    width:800px;
 }
 
 .login_containers h2 {
@@ -47,4 +48,9 @@
 	
 	 font-size: 15px;
 	 margin-top:20px;
+}
+.login1{
+	width:500px;
+	margin-left:auto;
+	margin-right:auto;
 }	
