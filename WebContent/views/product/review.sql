@@ -22,3 +22,4 @@ from (select * from review_p order by re_no desc)) where rNum>=6 and rNum<=10 an
 drop table review_p;
 
 delete  review_p;
+
