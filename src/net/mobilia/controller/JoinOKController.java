@@ -1,5 +1,7 @@
 package net.mobilia.controller;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,7 +15,9 @@ public class JoinOKController implements Action {
 			HttpServletResponse response) throws Exception {
 
 		request.setCharacterEncoding("UTF-8");
-
+		response.setContentType("text/html;charset=UTF-8");
+		PrintWriter out=response.getWriter();
+		
 		MemberVO m=new MemberVO();
 		
 		String m_id=request.getParameter("m_id");
@@ -49,10 +53,11 @@ public class JoinOKController implements Action {
 
 		if(re==1) {
 
-			ActionForward forward=new ActionForward();
-			forward.setRedirect(true);//새로운 매핑주소 이동
-			forward.setPath("login.net");//로그인 매핑주소로 이동
-			return forward;
+			out.println("<script>");
+			out.println("alert('회원가입을 축하드립니다!')");
+			out.println("location='login.net';");
+			out.println("</script>");
+			
 		}
 
 		return null;
