@@ -24,7 +24,16 @@
 			<c:if test="${!empty id}">
 			 	<a href="logout.net">Logout</a> <a href="modify.net">Modify</a>
 			</c:if>
-			<a href="#">Cart</a> <a href="myshop.net">Myshop</a> <a href="qna.net">Community</a>
+			<c:if test="${id != 'admin'}">
+				<a href="#">Cart</a>
+			</c:if> 
+			<c:if test="${id == 'admin'}">
+				<a href="admin_product.net">Admin</a>
+			</c:if>
+			<c:if test="${id != 'admin'}">
+				<a href="myshop.net">Myshop</a>
+			</c:if>
+			<a href="qna.net">Community</a>
 			</div>
 			<%-------------------------------------- 로고 ------------------------------------%>
 			<div id="logo">
