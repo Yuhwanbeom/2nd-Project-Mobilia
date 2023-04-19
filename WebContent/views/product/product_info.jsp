@@ -175,10 +175,6 @@
 						<ul>	
 							<li id="p_img1">
 								<img src="./upload${r.p_img1}" width="50" height="50" id="re_img">
-<<<<<<< HEAD
-								<img src="./images/product/star1.png" width="13">
-								<img src="./images/product/star0.png" width="13">
-=======
 								<c:forEach begin="1" end="${r.re_star}" step="1">
 									<img src="./images/product/star1.png" width="13">
 								</c:forEach>
@@ -189,7 +185,6 @@
 									<a href="#" id="re_edit">수정</a>
 									<a href="#" id="re_del">삭제</a>
 								</c:if>
->>>>>>> branch 'master' of https://github.com/Yuhwanbeom/2nd-Project-Mobilia.git
 							</li>
 							<li id="m_id"><span>${r.p_name} | ${r.re_date}</span>
 							<li id="m_review"><span>${r.re_cont}</span>
