@@ -98,7 +98,7 @@
 			</div>
 			<div id="bottom_tep">
 				<div id="buyBtn"><a href="#">구매하기</a></div> 
-				<div id="cartBtn"><a href="#">장바구니</a></div>
+				<div id="cartBtn"><a href="cart.net">장바구니</a></div>
 			</div>
 		</div>
 		<div id="sub_info">
