@@ -35,12 +35,13 @@ public class QnaDelOKController implements Action {
 	           out.println("</script>");
 	        }else {
 	           pdao.delBoard(board_no);
-	           /* 문제) 번호를 기준으로 게시물을 삭제되게 만들어 본다. 
-	            */
-	           ActionForward forward=new ActionForward();
-	           forward.setRedirect(true);
-	           forward.setPath("qna.net?page="+page);
-	           return forward;
+	           
+	           out.println("<script>");
+	           out.println("alert('게시물이 삭제되었습니다!');");
+	           out.println("location='qna.net?page="+page+"';");
+	           out.println("</script>");
+	           
+	          
 	}
 	        return null;
 	}
