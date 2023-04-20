@@ -62,7 +62,7 @@ Insert into PRODUCT_LIST (P_NO,P_NAME,P_BEFORE_PRICE,P_PRICE,P_AMOUNT,P_SOLD,P_I
 Insert into PRODUCT_LIST (P_NO,P_NAME,P_BEFORE_PRICE,P_PRICE,P_AMOUNT,P_SOLD,P_IMG1,P_IMG2,P_CHOICE,P_CLASS,P_CATEGORY,P_DATE,P_INFO,P_COLOR,P_SIZE) values (18,'침대형 의자01',390000,218400,5,0,'/2023-4-19/product202341950159304.jpg','/2023-4-19/product202341950159304_on.jpg',1,'chair','침대형 의자',to_date('23/04/19','RR/MM/DD'),'1인용 리클라이너 눕는의자
 최고의 편안함을 느껴보세요.','브라운','680x530x1090~1170');
 create sequence product_no_seq
-start with 1 -- 1부터 시작
+start with 45 -- 1부터 시작
 increment by 1 --1씩 증가
 nocache; --임시 메모리 사용하지 않겠다는 뜻
 
@@ -74,8 +74,12 @@ select * from (select * from product_list where p_choice=1 order by p_no desc) w
 
 select * from PRODUCT_list where p_choice=1 order by p_no desc;
 
+<<<<<<< HEAD
 delete product_list where p_no=32;
 
+=======
+delete product_list;
+>>>>>>> branch 'master' of https://github.com/Yuhwanbeom/2nd-Project-Mobilia.git
 commit;
 
 drop table product_list;

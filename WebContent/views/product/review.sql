@@ -22,6 +22,7 @@ from (select * from review_p order by re_no desc)) where rNum>=6 and rNum<=10 an
 drop table review_p;
 
 delete  review_p;
-
+commit;
+drop sequence re_no_seq;
 
 select * from (select * from product_list where p_choice=1 order by p_no desc) where ROWNUM <= 8;

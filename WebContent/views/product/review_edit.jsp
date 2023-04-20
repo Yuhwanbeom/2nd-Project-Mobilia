@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +12,7 @@
 </head>
 <body>
 <div id="reviewArea">
-	<form action="review_write_ok.net?p_no=${pv.p_no}" method="post" name="reviewform"
+	<form action="review_edit_ok.net?p_no=${r.p_no}&page=${page}&re_no=${r.re_no}" method="post" name="reviewform"
 	onsubmit="return review_check();">
 		<h2>상품 후기 작성</h2>
 		<div>
@@ -46,11 +48,11 @@
 		<div style="clear:both;"></div>
 		<div id="reviewArea">
 			<div id="pr_info2">
-				<div><img src="./upload${pv.p_img1}" 
+				<div><img src="./upload${r.p_img1}" 
 					style="width:100px;height:auto;">
-					<input type="hidden" value="${pv.p_img1}" name="p_img1"></div>
-				<span id="pr_name2">${pv.p_name}
-				<input type="hidden" value="${pv.p_name}" name="p_name">
+					<input type="hidden" value="${r.p_img1}" name="p_img1"></div>
+				<span id="pr_name2">${r.p_name}
+				<input type="hidden" value="${r.p_name}" name="p_name">
 				</span>
 			</div>
 			<div style="clear:both;"></div>
@@ -58,11 +60,11 @@
 		<div id="reviewArea">
 			<table id="reviewTable">
 				<tr>
-					<th>아이디</th><td>${id}</td>
+					<th>아이디</th><td>${r.m_id}</td>
 				</tr>
 			</table>
 			<div>
-				<textarea id="re_cont" name="re_cont" rows="15" cols="40" placeholder="후기를 입력하세요."></textarea>
+				<textarea id="re_cont" name="re_cont" rows="15" cols="40" placeholder="후기를 입력하세요.">${r.re_cont}</textarea>
 			</div>
 			<div>
 				<input id="reviewBtn" type="submit" value="등록">

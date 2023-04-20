@@ -6,16 +6,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="./css/member/findOK.css">
+<link rel="stylesheet" type="text/css" href="./css/member/login.css">
 <meta charset="UTF-8">
+
 <title></title>
 </head>
 <body>
 
-<div class="find_pwd_ok">
+<div class="login1">
+<div>
 <h2>회원님의 아이디는</h2>
-<h1 class="find_pwd">${find_id}</h1>
+<h1 class="find">${find_id}</h1>
 <h2>입니다.</h2>
+<div class="login4">
+<button class="btn1" onclick="location='login.net'"> 로그인 하기</button>
+<button class="btn1" onclick="location='find_pwd.net'"> 비밀번호 찾기</button>
+</div>
+
+</div>
 
 </div>
 
