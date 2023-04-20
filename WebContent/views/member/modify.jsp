@@ -34,7 +34,7 @@
     <tr>
      <th class="edit-th">비밀번호<b class="star">*</b></th>
      <td>
-      <input id="m_pwd" name="m_pwd" value="${mvo.m_pwd}" onchange="check_pwd()">
+      <input type="password" id="m_pwd" name="m_pwd" value="${mvo.m_pwd}" onchange="check_pwd()">
       <span class="pwdMsg">(영문 대소문자/숫자/특수문자 조합가능, 6~16자)</span>
      </td>
     </tr>
@@ -42,7 +42,7 @@
     <tr>
      <th class="edit-th">비밀번호 확인<b class="star">*</b></th>
      <td>
-      <input id="pwd_chk" name="pwd_chk" onchange="check_pwd()">
+      <input type="password" id="pwd_chk" name="pwd_chk" onchange="check_pwd()">
       &nbsp;<span id="check"></span>
      </td>
     </tr>
