@@ -28,6 +28,7 @@ $(document).ready(function() {
        $('#sidebar_02').css("display","block"); //up,down 버튼 보이게
 	   $('#search_btn').css("top","12px");
 	   $('#search_text').css("top","10px");
+	   $('.menu').css("margin-top","0px");
      } 
      // 아니면 클래스 'drop'을 제거
      else {
@@ -38,6 +39,7 @@ $(document).ready(function() {
        $('#sidebar_02').css("display","none");   //up,down 버튼 감춤
 	   $('#search_text').css("top","38px");
 	   $('#search_btn').css("top","40px");
+	   $('.menu').css("margin-top","40px");
      }
    };
    $('#best_seller_btn').click(function(){
