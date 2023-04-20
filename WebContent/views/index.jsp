@@ -141,7 +141,7 @@
 					</div>
 					<ul id="product_info">
 						<li><a href="product_info.net?p_no=${n.p_no}" style="text-decoration:none;">
-								<span style="font-size:14px;color:#333333;font-weight:bold;">${m.p_name}
+								<span style="font-size:14px;color:#333333;font-weight:bold;">${n.p_name}
 								</span>
 							</a>
 						</li>
