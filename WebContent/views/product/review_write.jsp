@@ -4,87 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-<script src="./js/jquery.js"></script>
 <link rel="stylesheet" type="text/css" href="./css/review_write.css">
-<style>
-</style>
-<script>
-	var locked=0;
-	
-	function show(star){
-		if(locked == 1){
-			return;
-		}
-		var i;
-		var image;
-		var el;
-		var e = document.getElementById('starText');
-		var stateMsg;
-		
-		for(i=1;i<=star;i++){
-			image = 'image'+i;
-			el = document.getElementById(image);
-			el.src="./images/product/star1.png";
-		}
-		
-		switch(star){
-		case 1:
-			stateMsg="마음에 들지 않아요!";
-			break;
-		case 2:
-			stateMsg="조금 아쉬워요!";
-			break;
-		case 3:
-			stateMsg="괜찮아요!";
-			break;
-		case 4:
-			stateMsg="만족해요!";
-			break;
-		case 5:
-			stateMsg="너무 마음에 들어요!";
-			break;
-		default:
-			stateMsg="";
-		}
-		e.innerHTML = stateMsg;
-	}
-	function noshow(star){
-		if(locked == 1){
-			return;
-		}
-		var i;
-		var image;
-		var el;
-		
-		for(i=1;i<=star;i++){
-			image='image'+i;
-			el = document.getElementById(image);
-			el.src="./images/product/star0.png";
-		}
-	}
-	
-	function lock(star){
-		if(locked == 0){
-			show(star);
-			locked =1;
-		}else{
-			locked =0;
-			noshow(5);
-			show(star);
-			locked =1;
-		}
-		
-		
-	}
-	function mark(star){
-		lock(star);
-		document.reviewform.re_star.value=star;
-	}
-</script>
+<script src="./js/jquery.js"></script>
+<script src="./js/review.js"></script>
 </head>
 <body>
 <div id="reviewArea">
-	<form action="review_write_ok.net?p_no=${pv.p_no}" method="post" name="reviewform">
+	<form action="review_write_ok.net?p_no=${pv.p_no}" method="post" name="reviewform"
+	onsubmit="return review_check();">
 		<h2>상품 후기 작성</h2>
 		<div>
 			<table id="starTable">
@@ -110,7 +37,7 @@
 									width="20">
 							</span>
 						</div>
-						<input type="hidden" name="re_star">
+						<input type="hidden" name="re_star" id="re_star">
 					</td>
 				</tr>
 			</table>
@@ -135,7 +62,7 @@
 				</tr>
 			</table>
 			<div>
-				<textarea name="re_cont" rows="15" cols="40" placeholder="후기를 입력하세요."></textarea>
+				<textarea id="re_cont" name="re_cont" rows="15" cols="40" placeholder="후기를 입력하세요."></textarea>
 			</div>
 			<div>
 				<input id="reviewBtn" type="submit" value="등록">
