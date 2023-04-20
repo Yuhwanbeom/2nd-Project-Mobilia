@@ -24,7 +24,7 @@
      <th>아이디<b class="star">*</b></th>
      <td>
      <input type="text" id="m_id" name="m_id" size="16">
-     <span class="idMsg">(영문 대소문자/숫자 조합가능, 4~16자)</span>&nbsp;
+     <span class="idMsg">(영문 대소문자/숫자 조합가능, 6~16자)</span>&nbsp;
      <input type="button" value="중복확인" onclick="id_check();" id="check_id"><br><span id="idcheck"></span>
      </td>
     </tr>
