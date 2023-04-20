@@ -35,8 +35,9 @@ header{
 	padding:0;
 }
 #logo{
+	position:absolute;
 	display:inline-block;
-	margin-right:145px;
+	left:46%;
 }
 #login{
 	float:right; margin:35px 50px 0px 0px;
@@ -108,6 +109,7 @@ header{
 	margin:0 auto;
 	width:1000px; height:30px;
 	padding-top:10px;
+	margin-top:40px;
 }
 .menu>li{
 	float:left;
