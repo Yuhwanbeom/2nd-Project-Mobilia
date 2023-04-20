@@ -56,7 +56,7 @@
      <th id="post-th">주소<b class="star">*</b></th>
      <td>
      <input type="text" id="m_post" name="m_post" placeholder="우편번호" value="${mvo.m_post}" style="width:80px;" readonly>
-	<input type="button" onclick="post_check()" value="우편번호 찾기"><br><br>
+	<input type="button" id="post" onclick="post_check()" value="우편번호 찾기"><br><br>
 	<input type="text" id="m_roadAddr" name="m_roadAddr" placeholder="도로명주소" value="${mvo.m_roadAddr}" style="width:260px;" readonly>
 	<input type="text" id="m_jibunAddr" name="m_jibunAddr" placeholder="지번주소" value="${mvo.m_jibunAddr}" style="width:260px;" readonly>
 	<span id="guide" style="color:#999;display:none"></span>
