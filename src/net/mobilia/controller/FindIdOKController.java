@@ -28,15 +28,15 @@ public class FindIdOKController implements Action {
 		
 		m.setM_name(id_name); m.setMail_id(email[0]); m.setMail_domain(email[1]);
 		
-		MemberVO pm=mdao.idMember(m);//아이디와 회원이름을 기준으로 오라클로 부터 회원정보를 검색
+		MemberVO pm2=mdao.idMember(m);//아이디와 회원이름을 기준으로 오라클로 부터 회원정보를 검색
 		
-		if(pm == null) {
+		if(pm2 == null) {
 			out.println("<script>");
 			out.println("alert('회원정보를 찾을 수 없습니다!');");
 			out.println("history.back();");
 			out.println("</script>");
 		}else {
-			request.setAttribute("find_id",pm.getM_id());
+			request.setAttribute("find_id",pm2.getM_id());
 			forward.setRedirect(false);
 			forward.setPath("./views/find_account/find_id_ok.jsp");
 			return forward;
