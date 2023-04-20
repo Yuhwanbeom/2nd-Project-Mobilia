@@ -34,7 +34,7 @@ public class InquiryWriteController implements Action {
 			request.setAttribute("pv", pv);
 			ActionForward forward=new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("./views/product/review_write.jsp");
+			forward.setPath("./views/product/inquiry_write.jsp");
 			
 			return forward;
 		}

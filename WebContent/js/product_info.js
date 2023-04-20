@@ -79,7 +79,7 @@ function inquiry_check(){
     var _left = Math.ceil(( window.screen.width - _width )/2);
     var _top = Math.ceil(( window.screen.height - _height )/2)-50; 
  
-    window.open(url,'사용후기작성','width='+_width+',height='+_height 
+    window.open(url,'사용문의작성','width='+_width+',height='+_height 
     		+', left='+ _left+',top='+_top);
 }
 function count(type)  { //버튼 숫자 증가
