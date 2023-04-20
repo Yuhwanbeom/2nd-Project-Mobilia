@@ -25,7 +25,7 @@
      <td>
      <input type="text" id="m_id" name="m_id" size="16">
      <span class="idMsg">(영문 대소문자/숫자 조합가능, 4~16자)</span>&nbsp;
-     <input type="button" value="중복확인" onclick="id_check();"><br><span id="idcheck"></span>
+     <input type="button" value="중복확인" onclick="id_check();" id="check_id"><br><span id="idcheck"></span>
      </td>
     </tr>
     
@@ -55,7 +55,7 @@
     <tr>
      <th id="post-th">우편번호<b class="star">*</b></th>
      <td><input type="text" id="m_post" name="m_post" placeholder="우편번호" readonly>
-		<input type="button" onclick="post_check()" value="우편번호 찾기"><br><br>
+		<input type="button" onclick="post_check()" value="우편번호 찾기" id="post"><br><br>
 		<input type="text" id="m_roadAddr" name="m_roadAddr" placeholder="도로명주소" style="width:230px;" readonly>
 		<input type="text" id="m_jibunAddr" name="m_jibunAddr" placeholder="지번주소" style="width:230px;"  readonly>
 		<span id="guide" style="color:#999;display:none"></span>
