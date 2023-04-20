@@ -98,7 +98,7 @@ public class MemberDAOImpl {
 			}catch(Exception e) {e.printStackTrace();}
 		}
 
-		return null;
+		return m;
 	}
 
 	//회원정보 수정
