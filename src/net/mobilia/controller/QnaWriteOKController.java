@@ -47,10 +47,10 @@ public class QnaWriteOKController implements Action {
 				out.println("</script>");
 			}else {
 				
-				ActionForward forward=new ActionForward();
-				forward.setRedirect(true);
-				forward.setPath("qna.net");
-				return forward;
+				   out.println("<script>");
+		           out.println("alert('게시물이 등록되었습니다!');");
+		           out.println("location='qna.net';");
+		           out.println("</script>");
 			}
 		}
 		return null;
