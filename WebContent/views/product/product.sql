@@ -18,7 +18,7 @@ create table product_list(
 );
 
 create sequence product_no_seq
-start with 1 -- 1부터 시작
+start with 45 -- 1부터 시작
 increment by 1 --1씩 증가
 nocache; --임시 메모리 사용하지 않겠다는 뜻
 
@@ -27,7 +27,7 @@ select * from (select * from product_list where p_choice=1 order by p_no desc) w
 
 select * from PRODUCT_list where p_choice=1 order by p_no desc;
 
-delete product_list where p_no=32;
+delete product_list;
 commit;
 drop table product_list;
 
