@@ -187,7 +187,7 @@
 									<a href="review_del_ok.net?p_no=${r.p_no}&page=${page}&re_no=${r.re_no}" id="re_del">삭제</a>
 								</c:if>
 							</li>
-							<li id="m_id"><span>${r.p_name} | ${r.re_date}</span>
+							<li id="m_id"><span>${r.m_id.substring(0,4)}**** | ${r.re_date}</span>
 							<li id="m_review"><span>${r.re_cont}</span>
 							</ul>
 						</div>
