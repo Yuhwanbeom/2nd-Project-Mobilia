@@ -182,8 +182,9 @@
 									<img src="./images/product/star0.png" width="13">
 								</c:forEach>
 								<c:if test="${id == r.m_id}">
-									<a href="#" id="re_edit">수정</a>
-									<a href="#" id="re_del">삭제</a>
+									<a href="review_edit.net?re_no=${r.re_no}&page=${page}" id="re_edit"
+									onclick="window.open(this.href,'','width=600,height=600'); return false">수정</a>
+									<a href="review_del_ok.net?p_no=${r.p_no}&page=${page}&re_no=${r.re_no}" id="re_del">삭제</a>
 								</c:if>
 							</li>
 							<li id="m_id"><span>${r.p_name} | ${r.re_date}</span>
@@ -220,7 +221,7 @@
 				</div>
 			<div id="consult_container">
 				<div id="titleCon">	
-					<div id="review_title">상품문의 <span>(46)</span></div>
+					<div id="review_title">상품문의 <span>(1)</span></div>
 					<input type="button" id="reviewBtn"onclick="inquiry_check();" value="문의 작성">
 					<p>상품과 무관한 질문 및 욕설/비속어가 포함된 문의는 고지 없이 삭제될 수 있습니다.<br>
 						선택하신 상품과 관련된 문의를 부탁 드립니다.<br>

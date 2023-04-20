@@ -111,18 +111,6 @@ function edit_check(){
 		$("#mail_id").val("").focus();
 		return false;
 	}
-	if($.trim($("#m_birth01").val())==""){
-		alert("년도를 입력하세요!");		
-		return false;
-	}
-	if($.trim($("#m_birth02").val())==""){
-		alert("월을 입력하세요!");		
-		return false;
-	}
-	if($.trim($("#m_birth03").val())==""){
-		alert("일을 입력하세요!");		
-		return false;
-	}
 	if($.trim($("#mail_domain").val())==""){
 		alert("이메일을 입력하세요!");		
 		return false;
