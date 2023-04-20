@@ -176,8 +176,8 @@ function domain_list(){
 function id_check(){
 	$("#idcheck").hide();//idcheck영역을 숨김
 	$m_id=$.trim($('#m_id').val());
-	if($m_id.length<4){
-		$newtxt='<font color="red" size="2"><b>아이디는 4자 이상이어야 합니다.</b></font>';
+	if($m_id.length<6){
+		$newtxt='<font color="red" size="2"><b>아이디는 6자 이상이어야 합니다.</b></font>';
 		$('#idcheck').text('');//idcheck 아이디 영역 문자 초기화
 		$('#idcheck').show();//idcheck 영역 보이게 함.
 		$('#idcheck').append($newtxt);//idcheck영역 문자끝에 문자 추가
@@ -194,7 +194,7 @@ function id_check(){
 		return false;
 	}
 	
-	//아이디를 4자 이상 12자이하로 입력했을때 정규표현식으로 유효성 검증
+	//아이디를 6자 이상 12자이하로 입력했을때 정규표현식으로 유효성 검증
 	if(!(validate_userid($m_id))){
 		$newtxt='<font color="red" size="2"><b>아이디는 영문소문자,숫자,_조합만 가능합니다.</b></font>';
 		$('#idcheck').text('');//idcheck 아이디 영역 문자 초기화
