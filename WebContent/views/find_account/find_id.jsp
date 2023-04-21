@@ -21,10 +21,6 @@
 					<button class="btn1" onclick="location='login.net'">취소</button>
 				</p>
 			</div>
-			
-
-
-
 		</form>
 
 	</div>
